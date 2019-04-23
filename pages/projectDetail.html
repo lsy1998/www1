@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cropperImg.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cropper.min.css" />
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+		<link rel="stylesheet" href="../css/video-js.min.css">
+		<link rel="stylesheet" href="../css/share.css">
+		<link rel="stylesheet" type="text/css" href="../css/comment.css" />
+		<link rel="stylesheet" type="text/css" href="../css/comment-style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/zoomify.css" />
+
+
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cropper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cropperImg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/video.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.flexText.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/zoomify.js" type="text/javascript" charset="utf-8"></script>
+
+
+	</head>
+	<body>
+
+
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="搜索&hellip;">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav">
+						<li><a id="create-projs" class="hidden-xs" href="../pages/create-projs.html">发布项目</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+						<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">/</a></li>
+						<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li>
+						<li>
+							<div class="navbar-touxiang"><img src="#" class="nav-touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/create-projs.html">发布项目</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/login.html">登陆</a></li>
+						<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="person-center-div">
+			<div class="person-center-inner-div">
+				<form action="">
+					<form class="form-horizontal">
+
+
+						<div class="person-detail-form-group2">
+							<div class="container-fluid">
+								<div class="row-fluid">
+									<div class="span12">
+										<div class="tabbable" id="tabs-726008">
+
+											<div class="tab-content" style="">
+												<div class="tab-pane active" id="panel1" style="">
+													<div class="project container-fluid">
+														<div class="proj-content">
+															<img src="#" alt="" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center">
+															<div class="proj-username"></div>
+
+															<div class="btn-group meun">
+																<a class="" data-toggle="dropdown" href="#">
+																	<span class="fa fa-ellipsis-h fa-lg"></span></a>
+																<ul class="dropdown-menu">
+																	<li><a href="../pages/change-project-information.html" class="pencil"><i class="fa fa-pencil fa-fw"></i>
+																			编辑项目</a></li>
+																	<li><a href="#" class="delete"><i class="fa fa-trash-o fa-fw"></i> 删除项目</a></li>
+																	<li><a href="../pages/upload-videos.html" class="video"><i class="fa fa-file-video-o fa-fw"></i> 上传视频</a></li>
+																	<li><a href="../pages/upload-pics.html" class="pic"><i class="fa fa-file-image-o fa-fw"></i> 上传图片</a></li>
+																	<!-- <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li> -->
+																	<!-- <li class="divider"></li>
+																	<li><a href="#"><i class="i"></i> Make admin</a></li> -->
+																</ul>
+															</div><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目主题:</p>
+															<p class="projectTopic"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目发起人:</p>
+															<p class="projectPrincipalName"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目类型:</p>
+															<p class="projectTypeId"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目地点:</p>
+															<p class="projectRegion-projectAddress"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目人数:</p>
+															<p class="projectPeopleNumbers"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>联系方式:</p>
+															<p class="projectPrincipalPhone"></p><br>
+															<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
+															<p>项目内容:</p>
+															<p class="projectContent"></p><br>
+														</div>
+														<div class="proj-pic-vid container-fluid">
+
+
+
+														</div>
+														<div class="project-buttom-bar col-md-12">
+															<p class="time"></p>
+															<p class="share fa fa-share-alt fa-fw" style="float: right;"></p>
+															<p class="like fa fa-heart-o fa-fw" style="float: right; color:red;"></p>
+
+														</div>
+														<div class="commentAll">
+															<!--评论区域 begin-->
+															<div class="reviewArea clearfix">
+																<textarea class="plContent content comment-input" placeholder="快来评论一下吧&hellip;" onkeyup="keyUP(this)"></textarea>
+																<a href="javascript:;" class="plBtn">评论</a>
+															</div>
+															<!--评论区域 end-->
+															<!--回复区域 begin-->
+															<div class="comment-show">
+
+															</div>
+															<!--回复区域 end-->
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</form>
+			</div>
+		</div>
+
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+
+	</body>
+	<script type="text/javascript">
+		$(".delete").click(function() {
+			var json = {
+				"token": sessionStorage.token,
+				"projectId": sessionStorage.projId
+			}
+			var jsondata = JSON.stringify(json);
+			$.ajax({
+				async: true,
+				type: "POST",
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/deleteIssueInfo',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						alert("删除成功");
+						sessionStorage.token = result.data.newToken;
+						window.location.href = "../pages/person-center.html";
+						// alert(sessionStorage.token);
+					} else {
+						alert("删除失败");
+					}
+				}
+			})
+		})
+
+
+		// if (sessionStorage.login == "true") {
+			var json = {
+				"username": sessionStorage.username,
+				"token": sessionStorage.token
+			}
+			var jsondata;
+			jsondata = JSON.stringify(json);
+			console.log(json);
+			$.ajax({
+				async: false,
+				type: 'post',
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.content.token;
+						$(".nav-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						// $(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+					} else {
+						alert("no");
+					}
+				}
+			})
+			
+		var json1 = {
+			"token": sessionStorage.token,
+			"projectId": sessionStorage.projId
+		}
+		var jsondata1 = JSON.stringify(json1);
+		console.log(json1);
+		$.ajax({
+			async: false,
+			type: 'POST',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/projectByInfo',
+			data: jsondata1,
+			dataType: 'json',
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				if (result.code == 200) {
+					console.log(result);
+					// alert("成功");
+					// sessionStorage.token = result.data.content.token;
+					sessionStorage.typeId = result.data.content.projectTypeId;
+					$(".projectTopic").html(result.data.content.projectTopic);
+					$(".projectPrincipalName").html(result.data.content.projectPrincipalName);
+					$(".projectTypeId").html(result.data.content.projectTypeId);
+					$(".projectContent").html(result.data.content.projectContent);
+					$(".projectRegion-projectAddress").html(result.data.content.projectRegion + result.data.content.projectAddress);
+					$(".projectPeopleNumbers").html(result.data.content.projectPeopleNumbers);
+					$(".projectPrincipalPhone").html(result.data.content.projectPrincipalPhone);
+					$(".proj-username").html(result.data.content.username);
+					$(".time").html(result.data.content.projectIssueTime);
+					sessionStorage.username1=result.data.content.username;
+					sessionStorage.favorite = result.data.content.favorite;
+					if (result.data.content.favorite == true) {
+
+						$(".like").removeClass("fa-heart-o");
+						$(".like").addClass("fa-heart");
+
+					}
+					var json = {
+						"username": sessionStorage.username1,
+						"token": sessionStorage.token
+					}
+					var jsondata;
+					jsondata = JSON.stringify(json);
+					console.log(json);
+					$.ajax({
+						async: false,
+						type: 'post',
+						url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+						data: jsondata,
+						dataType: "json",
+						contentType: 'application/json;charset=UTF-8',
+						success: function(result) {
+							console.log(result);
+							if (result.code == 200) {
+								sessionStorage.token = result.data.content.token;
+								
+								// $(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+								$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+							} else {
+								alert("no");
+							}
+						}
+					})
+					var i;
+					// 					for (i = 0; i < result.data.content.projectVideoLink.length; i++) {
+					// 						var vidstr ='<div class="col-md-4 col-sm-4 col-xs-4"><video id="my-video" class="my-video video-js col-md-12 col-sm-12 col-xs-12" controls preload="auto"  data-setup="{}">';
+					// 						vidstr += '<source src="';
+					// 						vidstr += result.data.content.projectVideoLink[i].videoLink;
+					// 						vidstr +='" type="video/mp4"><source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"><source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">';
+					// 						vidstr +='<p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>';
+					// 						$(".proj-pic-vid").append(vidstr);
+					// 					}
+					for (i = 0; i < result.data.content.projectVideoLinkTwo.length; i++) {
+						var vidstr =
+							'<div class="col-md-4 col-sm-4 col-xs-4"><video id="my-video" class="my-video video-js col-md-12 col-sm-12 col-xs-12" controls preload="auto"  data-setup="{}">';
+						vidstr += '<source src="';
+						vidstr += result.data.content.projectVideoLinkTwo[i];
+						vidstr +=
+							'" type="video/mp4"><source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"><source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">';
+						vidstr +=
+							'<p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>';
+						$(".proj-pic-vid").append(vidstr);
+					}
+
+					// 					for(i=result.data.content.projectPictureLink.length-1;i>=0;i--){
+					// 						var picstr = '<div class="img-div col-md-4 col-sm-4 col-xs-4 " style=""><img class="project-pic';
+					// 						picstr += i;
+					// 						picstr += 'video-pic-class " src="';
+					// 						picstr += result.data.content.projectPictureLink[i].pictureLink
+					// 						picstr +='" style="margin-top:5px; padding:0; object-fit: scale-down; background-color:#000000; background-color:rgba(0,0,0,0); " alt="" width="100%" height="100%"></div>';
+					// 						$(".proj-pic-vid").append(picstr);
+					// 					}
+					for (i = 0; i < result.data.content.projectPictureLinkTwo.length; i++) {
+						var picstr = '<div class="img-div col-md-4 col-sm-4 col-xs-4 " style=""><img class="project-pic';
+						picstr += i;
+						picstr += 'video-pic-class " src="';
+						picstr += result.data.content.projectPictureLinkTwo[i];
+						picstr +=
+							'" style="margin-top:5px; padding:0; object-fit: scale-down; background-color:#000000; background-color:rgba(0,0,0,0); " alt="" width="100%" height="100%"></div>';
+						$(".proj-pic-vid").append(picstr);
+					}
+					$(".img-div").height($(".img-div").width());
+					$(".my-video").height($(".my-video").width());
+					$(".img-div img").zoomify();
+				} else {
+					// alert("失败");
+				}
+			}
+		})
+
+
+
+		// 		var json3 = {
+		// 			"username": sessionStorage.username,
+		// 			"token": sessionStorage.token,
+		// 			"projectId": parseInt(sessionStorage.projId)
+		// 		}
+		// 		var jsondata3;
+		// 		jsondata3 = JSON.stringify(json3);
+		// 		console.log(json3);
+		// 		$.ajax({
+		// 			async: true,
+		// 			type: 'POST',
+		// 			url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectVid',
+		// 			data: jsondata3,
+		// 			dataType: 'json',
+		// 			contentType: 'application/json;charset=UTF-8',
+		// 			success: function(result) {
+		// 				if (result.code == 200) {
+		// 					console.log(result);
+		// 					// alert("成功");
+		// 					var i = 0;
+		// 
+		// 					for (i = 0; i < result.data.videoLinks.length; i++) {
+		// 						var vidstr ='<div class="col-md-4 col-sm-4 col-xs-4"><video id="my-video" class="my-video video-js col-md-12 col-sm-12 col-xs-12" controls preload="auto"  data-setup="{}">';
+		// 						vidstr += '<source src="';
+		// 						vidstr += result.data.videoLinks[i].videoLink;
+		// 						vidstr +='" type="video/mp4"><source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"><source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">';
+		// 						vidstr +='<p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>';
+		// 						// 						picstr += i;
+		// 						// 						picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
+		// 						// 						picstr += result.data.videoLinks[i].videoLink;
+		// 						// 						picstr += '" alt="">';
+		// 						$(".proj-pic-vid").append(vidstr);
+		// 					}
+		// 					var json2 = {
+		// 						"username": sessionStorage.username,
+		// 						"token": sessionStorage.token,
+		// 						"projectId": parseInt(sessionStorage.projId)
+		// 					}
+		// 					var jsondata2;
+		// 					jsondata2 = JSON.stringify(json2);
+		// 					console.log(json2);
+		// 					$.ajax({
+		// 						async: true,
+		// 						type: 'POST',
+		// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
+		// 						data: jsondata2,
+		// 						dataType: 'json',
+		// 						contentType: 'application/json;charset=UTF-8',
+		// 						success: function(result) {
+		// 							if (result.code == 200) {
+		// 								console.log(result);
+		// 								// alert("成功");
+		// 								var i = 0;
+		// 
+		// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
+		// 									var picstr = '<div class="img-div col-md-4 col-sm-4 col-xs-4 " style=""><img class="project-pic';
+		// 									picstr += i;
+		// 									picstr += 'video-pic-class " src="';
+		// 									picstr += result.data.pictureLinks[i].pictureLink
+		// 									picstr +='" style="margin-top:5px; padding:0; object-fit: scale-down; background-color:#000000; background-color:rgba(0,0,0,0); " alt="" width="100%" height="100%"></div>';
+		// 									$(".proj-pic-vid").append(picstr);
+		// 								}
+		// 								$(".img-div").height($(".img-div").width());
+		// 								// $(".video-pic-class").height($(".img-div").width());
+		// 								$(".my-video").height($(".my-video").width());
+		// 								$(".img-div img").zoomify();
+		// 							} else {
+		// 								alert("失败");
+		// 							}
+		// 						}
+		// 					})
+		// 				} else {
+		// 					alert("失败");
+		// 					var json2 = {
+		// 						"username": sessionStorage.username,
+		// 						"token": sessionStorage.token,
+		// 						"projectId": parseInt(sessionStorage.projId)
+		// 					}
+		// 					var jsondata2;
+		// 					jsondata2 = JSON.stringify(json2);
+		// 					console.log(json2);
+		// 					$.ajax({
+		// 						async: true,
+		// 						type: 'POST',
+		// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
+		// 						data: jsondata2,
+		// 						dataType: 'json',
+		// 						contentType: 'application/json;charset=UTF-8',
+		// 						success: function(result) {
+		// 							if (result.code == 200) {
+		// 								console.log(result);
+		// 								// alert("成功");
+		// 								var i = 0;
+		// 
+		// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
+		// 									var picstr = '<img class="project-pic';
+		// 									picstr += i;
+		// 									picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
+		// 									picstr += result.data.pictureLinks[i].pictureLink
+		// 									picstr += '" alt="">';
+		// 									$(".proj-pic-vid").append(picstr);
+		// 								}
+		// 							} else {
+		// 								alert("失败");
+		// 							}
+		// 						}
+		// 					})
+		// 				}
+		// 			}
+		// 		})
+		$(".project-pic").height($(".project-pic").width());
+		$(".video-pic-div").height($(".video-pic-2").height());
+		$(".vjs-tech").height($(".video-pic-2").height());
+		$(".vjs-poster").height($(".video-pic-2").height());
+		$(".my-video").height($(".video-pic-2").height());
+		$(".my-video").height($(".my-video").width());
+		$(".project-pic").height($(".project-pic").width());
+
+		$(window).resize(function() { //当浏览器大小变化时
+			$(".project-pic").height($(".project-pic").width());
+			$(".video-pic-div").height($(".video-pic-2").height());
+			$(".vjs-tech").height($(".video-pic-2").height());
+			$(".vjs-poster").height($(".video-pic-2").height());
+			$(".my-video").height($(".video-pic-2").height());
+			$(".my-video").height($(".my-video").width());
+
+		});
+
+
+		$(".person-center-div").height($(window).height() + $(".tab-pane").height());
+		$(".person-center-inner-div").height($(window).height() + $(".tab-pane").height());
+		$(".navbar-touxiang").width($(".navbar-touxaing").height());
+
+		$('.share').shareConfig({
+			Shade: true, //是否显示遮罩层
+			Event: 'click', //触发事件
+			Content: 'Share', //内容DIV ID
+			Title: '分享至' //显示标题
+		});
+
+		$(".like").click(function() {
+
+			var json = {
+				"projectId": parseInt(sessionStorage.projId),
+				"username": sessionStorage.username,
+				"projectClassifyId": sessionStorage.typeId,
+				"token": sessionStorage.token
+			}
+			var jsondata = JSON.stringify(json);
+			console.log(json);
+			var str;
+			if (sessionStorage.favorite == "false") {
+				str = 'http://139.199.86.115:8080/ProjectForDaChuang/Collection';
+
+			}
+			if (sessionStorage.favorite == "true") {
+				str = 'http://139.199.86.115:8080/ProjectForDaChuang/RemoveColletion';
+
+			}
+
+			$.ajax({
+				async: true,
+				type: 'POST',
+				url: str,
+				data: jsondata,
+				dataType: 'json',
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					if (result.code == 200) {
+						console.log(result);
+
+						if (sessionStorage.favorite == "false") {
+
+							$(".like").removeClass("fa-heart-o");
+							$(".like").addClass("fa-heart");
+							sessionStorage.favorite = "true";
+
+						} else {
+
+							$(".like").removeClass("fa-heart");
+							$(".like").addClass("fa-heart-o");
+							sessionStorage.favorite = "false";
+
+						}
+						//<p class="like fa fa-heart-o fa-fw" style="float: right;"></p>
+
+
+
+					} else {
+						alert("早就收藏过了，还点！！！");
+
+					}
+				}
+			})
+		})
+
+
+
+		videojs.addLanguage('zh-CN', {
+			"Play": "播放",
+			"Pause": "暂停",
+			"Current Time": "当前时间",
+			"Duration": "时长",
+			"Remaining Time": "剩余时间",
+			"Stream Type": "媒体流类型",
+			"LIVE": "直播",
+			"Loaded": "加载完毕",
+			"Progress": "进度",
+			"Fullscreen": "全屏",
+			"Non-Fullscreen": "退出全屏",
+			"Mute": "静音",
+			"Unmute": "取消静音",
+			"Playback Rate": "播放速度",
+			"Subtitles": "字幕",
+			"subtitles off": "关闭字幕",
+			"Captions": "内嵌字幕",
+			"captions off": "关闭内嵌字幕",
+			"Chapters": "节目段落",
+			"Close Modal Dialog": "关闭弹窗",
+			"Descriptions": "描述",
+			"descriptions off": "关闭描述",
+			"Audio Track": "音轨",
+			"You aborted the media playback": "视频播放被终止",
+			"A network error caused the media download to fail part-way.": "网络错误导致视频下载中途失败。",
+			"The media could not be loaded, either because the server or network failed or because the format is not supported.": "视频因格式不支持或者服务器或网络的问题无法加载。",
+			"The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "由于视频文件损坏或是该视频使用了你的浏览器不支持的功能，播放终止。",
+			"No compatible source was found for this media.": "无法找到此视频兼容的源。",
+			"The media is encrypted and we do not have the keys to decrypt it.": "视频已加密，无法解密。",
+			"Play Video": "播放视频",
+			"Close": "关闭",
+			"Modal Window": "弹窗",
+			"This is a modal window": "这是一个弹窗",
+			"This modal can be closed by pressing the Escape key or activating the close button.": "可以按ESC按键或启用关闭按钮来关闭此弹窗。",
+			", opens captions settings dialog": ", 开启标题设置弹窗",
+			", opens subtitles settings dialog": ", 开启字幕设置弹窗",
+			", opens descriptions settings dialog": ", 开启描述设置弹窗",
+			", selected": ", 选择",
+			"captions settings": "字幕设定",
+			"Audio Player": "音频播放器",
+			"Video Player": "视频播放器",
+			"Replay": "重播",
+			"Progress Bar": "进度小节",
+			"Volume Level": "音量",
+			"subtitles settings": "字幕设定",
+			"descriptions settings": "描述设定",
+			"Text": "文字",
+			"White": "白",
+			"Black": "黑",
+			"Red": "红",
+			"Green": "绿",
+			"Blue": "蓝",
+			"Yellow": "黄",
+			"Magenta": "紫红",
+			"Cyan": "青",
+			"Background": "背景",
+			"Window": "视窗",
+			"Transparent": "透明",
+			"Semi-Transparent": "半透明",
+			"Opaque": "不透明",
+			"Font Size": "字体尺寸",
+			"Text Edge Style": "字体边缘样式",
+			"None": "无",
+			"Raised": "浮雕",
+			"Depressed": "压低",
+			"Uniform": "均匀",
+			"Dropshadow": "下阴影",
+			"Font Family": "字体库",
+			"Proportional Sans-Serif": "比例无细体",
+			"Monospace Sans-Serif": "单间隔无细体",
+			"Proportional Serif": "比例细体",
+			"Monospace Serif": "单间隔细体",
+			"Casual": "舒适",
+			"Script": "手写体",
+			"Small Caps": "小型大写字体",
+			"Reset": "重启",
+			"restore all settings to the default values": "恢复全部设定至预设值",
+			"Done": "完成",
+			"Caption Settings Dialog": "字幕设定视窗",
+			"Beginning of dialog window. Escape will cancel and close the window.": "开始对话视窗。离开会取消及关闭视窗",
+			"End of dialog window.": "结束对话视窗"
+		});
+
+
+
+
+
+
+		var myPlayer = videojs('my-video');
+		videojs("my-video").ready(function() {
+			var myPlayer = this;
+			myPlayer.play();
+		});
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			$('.content').flexText();
+		});
+	</script>
+	<!--textarea限制字数-->
+	<script type="text/javascript">
+		function keyUP(t) {
+			var len = $(t).val().length;
+			if (len > 139) {
+				$(t).val($(t).val().substring(0, 140));
+			}
+		}
+	</script>
+	<!--点击评论创建评论条-->
+	<script type="text/javascript">
+		var json4 = {
+			"projectId": sessionStorage.projId,
+			"pageNum ": 1,
+			"token": sessionStorage.token
+		}
+		var jsondata4 = JSON.stringify(json4);
+		console.log(json4);
+		$.ajax({
+			async: true,
+			type: 'POST',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/selectIssueComment',
+			data: jsondata4,
+			dataType: 'json',
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				if (result.code == 200) {
+					console.log(result);
+					var i;
+					for (i = result.data.content.list.length - 1; i >= 0; i--) {
+						var oHtml =
+							'<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">' +
+							result.data.content.list[i].userNick + ': </a> <span class="my-pl-con">&nbsp;' +
+							result.data.content.list[i].comment +
+							'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.data.content
+							.list[i].commentTime +
+							'</span>';
+						$('.comment-show').append(oHtml);
+					}
+
+					alert("成功");
+
+				} else {
+					alert("失败");
+				}
+			}
+		})
+
+		$('.plBtn').click(function() {
+			var json3 = {
+				"projectId": sessionStorage.projId,
+				"comment": $(".plContent").val(),
+				"username": sessionStorage.username,
+				"token": sessionStorage.token
+			}
+			var jsondata3 = JSON.stringify(json3);
+			console.log(json3);
+			$.ajax({
+				async: true,
+				type: 'POST',
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/issueComment',
+				data: jsondata3,
+				dataType: 'json',
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					if (result.code == 200) {
+						console.log(result);
+						alert("成功");
+						var json4 = {
+							"projectId": sessionStorage.projId,
+							"pageNum ": 1,
+							"token": sessionStorage.token
+						}
+						var jsondata4 = JSON.stringify(json4);
+						console.log(json4);
+						$.ajax({
+							async: true,
+							type: 'POST',
+							url: 'http://139.199.86.115:8080/ProjectForDaChuang/selectIssueComment',
+							data: jsondata4,
+							dataType: 'json',
+							contentType: 'application/json;charset=UTF-8',
+							success: function(result) {
+								if (result.code == 200) {
+									console.log(result);
+									// $('.comment-show').remove();
+									var i;
+									i = result.data.content.list.length - 1;
+									var oHtml =
+										'<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">' +
+										result.data.content.list[i].userNick + ': </a> <span class="my-pl-con">&nbsp;' +
+										result.data.content.list[i].comment +
+										'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + result.data
+										.content.list[i].commentTime +
+										'</span>';
+									$('.comment-show').prepend(oHtml);
+
+
+									alert("成功");
+
+								} else {
+									alert("失败");
+								}
+							}
+						})
+					} else {
+						alert("失败");
+					}
+				}
+			})
+
+
+
+
+			// $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value', '').siblings('pre').find('span').text('');
+
+		});
+	</script>
+	<!--点击回复动态创建回复块-->
+	<!-- <script type="text/javascript">
+		$('.comment-show').on('click', '.pl-hf', function() {
+			//获取回复人的名字
+			var fhName = $(this).parents('.date-dz-right').parents('.date-dz').siblings('.pl-text').find('.comment-size-name')
+				.html();
+			//回复@
+			var fhN = '回复@' + fhName;
+			//var oInput = $(this).parents('.date-dz-right').parents('.date-dz').siblings('.hf-con');
+			var fhHtml =
+				'<div class="hf-con pull-left"> <textarea class="content comment-input hf-input" placeholder="" onkeyup="keyUP(this)"></textarea> <a href="javascript:;" class="hf-pl">评论</a></div>';
+			//显示回复
+			if ($(this).is('.hf-con-block')) {
+				$(this).parents('.date-dz-right').parents('.date-dz').append(fhHtml);
+				$(this).removeClass('hf-con-block');
+				$('.content').flexText();
+				$(this).parents('.date-dz-right').siblings('.hf-con').find('.pre').css('padding', '6px 15px');
+				//console.log($(this).parents('.date-dz-right').siblings('.hf-con').find('.pre'))
+				//input框自动聚焦
+				$(this).parents('.date-dz-right').siblings('.hf-con').find('.hf-input').val('').focus().val(fhN);
+			} else {
+				$(this).addClass('hf-con-block');
+				$(this).parents('.date-dz-right').siblings('.hf-con').remove();
+			}
+		});
+	</script> -->
+	<!--评论回复块创建-->
+	<!-- <script type="text/javascript">
+		$('.comment-show').on('click', '.hf-pl', function() {
+			var oThis = $(this);
+			var myDate = new Date();
+			//获取当前年
+			var year = myDate.getFullYear();
+			//获取当前月
+			var month = myDate.getMonth() + 1;
+			//获取当前日
+			var date = myDate.getDate();
+			var h = myDate.getHours(); //获取当前小时数(0-23)
+			var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+			if (m < 10) m = '0' + m;
+			var s = myDate.getSeconds();
+			if (s < 10) s = '0' + s;
+			var now = year + '-' + month + "-" + date + " " + h + ':' + m + ":" + s;
+			//获取输入内容
+			var oHfVal = $(this).siblings('.flex-text-wrap').find('.hf-input').val();
+			console.log(oHfVal)
+			var oHfName = $(this).parents('.hf-con').parents('.date-dz').siblings('.pl-text').find('.comment-size-name').html();
+			var oAllVal = '回复@' + oHfName;
+			if (oHfVal.replace(/^ +| +$/g, '') == '' || oHfVal == oAllVal) {
+
+			} else {
+				$.getJSON("../json/pl.json", function(data) {
+					var oAt = '';
+					var oHf = '';
+					$.each(data, function(n, v) {
+						delete v.hfContent;
+						delete v.atName;
+						var arr;
+						var ohfNameArr;
+						if (oHfVal.indexOf("@") == -1) {
+							data['atName'] = '';
+							data['hfContent'] = oHfVal;
+						} else {
+							arr = oHfVal.split(':');
+							ohfNameArr = arr[0].split('@');
+							data['hfContent'] = arr[1];
+							data['atName'] = ohfNameArr[1];
+						}
+
+						if (data.atName == '') {
+							oAt = data.hfContent;
+						} else {
+							oAt = '回复<a href="#" class="atName">@' + data.atName + '</a> : ' + data.hfContent;
+						}
+						oHf = data.hfName;
+					});
+
+					var oHtml =
+						'<div class="all-pl-con"><div class="pl-text hfpl-text clearfix"><a href="#" class="comment-size-name">我的名字 : </a><span class="my-pl-con">' +
+						oAt + '</span></div><div class="date-dz"> <span class="date-dz-left pull-left comment-time">' + now +
+						'</span> <div class="date-dz-right pull-right comment-pl-block"> <a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div></div>';
+					oThis.parents('.hf-con').parents('.comment-show-con-list').find('.hf-list-con').css('display', 'block').prepend(
+							oHtml) && oThis.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf').addClass('hf-con-block') &&
+						oThis.parents('.hf-con').remove();
+				});
+			}
+		});
+	</script> -->
+	<!--删除评论块-->
+	<!-- <script type="text/javascript">
+		$('.commentAll').on('click', '.removeBlock', function() {
+			var oT = $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con');
+			if (oT.siblings('.all-pl-con').length >= 1) {
+				oT.remove();
+			} else {
+				$(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con').parents('.hf-list-con').css(
+					'display', 'none')
+				oT.remove();
+			}
+			$(this).parents('.date-dz-right').parents('.date-dz').parents('.comment-show-con-list').parents(
+				'.comment-show-con').remove();
+
+		})
+	</script> -->
+	<!--点赞-->
+	<!-- <script type="text/javascript">
+		$('.comment-show').on('click', '.date-dz-z', function() {
+			var zNum = $(this).find('.z-num').html();
+			if ($(this).is('.date-dz-z-click')) {
+				zNum--;
+				$(this).removeClass('date-dz-z-click red');
+				$(this).find('.z-num').html(zNum);
+				$(this).find('.date-dz-z-click-red').removeClass('red');
+			} else {
+				zNum++;
+				$(this).addClass('date-dz-z-click');
+				$(this).find('.z-num').html(zNum);
+				$(this).find('.date-dz-z-click-red').addClass('red');
+			}
+		})
+	</script> -->
+</html>

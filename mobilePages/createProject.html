@@ -1,0 +1,301 @@
+<strong><!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>AUI快速完成布局</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-header">发布项目</li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        项目主题
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="项目主题">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        发布者
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="发布者">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        招募人数
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="number" placeholder="招募人数">
+                    </div>
+                </div>
+            </li>
+			 <li class="aui-list-item">
+			    <div class="aui-list-item-inner">
+			        <div class="aui-list-item-label">
+			            手机号
+			        </div>
+			        <div class="aui-list-item-input">
+			            <input type="number" placeholder="手机号">
+			        </div>
+			    </div>
+			</li>
+			<li class="aui-list-item">
+			    <div class="aui-list-item-inner">
+			        <div class="aui-list-item-label">
+			            地点
+			        </div>
+			        <div class="aui-list-item-input city">
+			            <!-- <select class="form-control prov"></select>
+						<select class="form-control  city" disabled="disabled"></select>
+						<select class="form-control  dist" disabled="disabled"></select> -->
+			       <input type="text" class="form-control my-project-address" name="projectAddress" placeholder="">
+					</div>
+			    </div>
+			</li>
+			<li class="aui-list-item">
+			    <div class="aui-list-item-inner">
+			        <div class="aui-list-item-label">
+			            
+			        </div>
+			        <div class="aui-list-item-input city">
+			            <!-- <select class="form-control prov"></select>
+						<select class="form-control  city" disabled="disabled"></select>
+						<select class="form-control  dist" disabled="disabled"></select> -->
+			       <input type="text" class="form-control my-project-detail-address" name="projectAddress" placeholder="村/街道/小区/详细地址">
+					</div>
+			    </div>
+			</li>
+			<li class="aui-list-item">
+			    <div class="aui-list-item-inner">
+			        <div class="aui-list-item-label">
+			            项目类型
+			        </div>
+			        <div class="aui-list-item-input city">
+			            <select class="projectTypeId">
+									<option value="1">环境清洁</option>
+									<option value="2">宣传教育</option>
+									<option value="3">社区关爱</option>
+									<option value="4">助农增收</option>
+									<option value="5">心理咨询</option>
+									<option value="6">设备维修</option>
+									<option value="7">绿化种植</option>
+								</select>
+						
+			       
+					</div>
+			    </div>
+			</li>
+            <!-- <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        Radio
+                    </div>
+                    <div class="aui-list-item-input">
+                        <label><input class="aui-radio" type="radio" name="demo1" checked> 选项一</label>
+                        <label><input class="aui-radio" type="radio" name="demo1"> 选项二</label>
+                    </div>
+                </div>
+            </li> -->
+            
+            <!-- <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        Switch
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="checkbox" class="aui-switch" checked>
+                    </div>
+                </div>
+            </li> -->
+            <!-- <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        Range
+                    </div>
+                    <div class="aui-list-item-input">
+                        <div class="aui-range">
+                            <input type="range" class="aui-range" value="30" max="100" min="1" step="1" id="range" />
+                        </div>
+                    </div>
+                </div>
+            </li> -->
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        内容
+                    </div>
+                    <div class="aui-list-item-input">
+                        <textarea placeholder="项目内容"></textarea>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn aui-btn-info aui-margin-r-5">提交</div>
+                    <div class="aui-btn aui-btn-danger aui-margin-l-5">取消</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-header">带有图标的表单</li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="fa fa-mobile"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" class="inputUsername" placeholder="username">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" class="inputPassword" placeholder="password">
+                    </div>
+                    <div class="aui-list-item-label-icon">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                </div>
+            </li>
+			<li class="aui-list-item">
+			    <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+			        <div class="aui-btn aui-btn-info aui-margin-r-5 login-btn">提交</div>
+			        
+			    </div>
+			</li>
+        </ul>
+    </div> -->
+    <!-- <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-select-list">
+            <li class="aui-list-header">带有单选或多选框的列表</li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label">
+                    <input class="aui-radio" type="radio" name="radio" checked>
+                </div>
+                <div class="aui-list-item-inner">
+                    这是一个列表项
+                    <div class="aui-list-item-text">
+                        这里是内容区域，新版中的列表布局可以很轻松的帮助开发者完成常见列表样式。
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-radio" type="radio" name="radio" checked> 这是一个列表项</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-radio" disabled type="radio" name="radio"> 这是一个列表项</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-radio" type="radio" name="radio"> 这是一个列表项</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-radio" type="radio" name="radio2" checked> 选项一</label>
+                    <label><input class="aui-radio" type="radio" name="radio2"> 选项二</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-checkbox" type="radio" name="checkbox" checked> 这是一个列表项</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-checkbox" disabled checked="" type="radio" name="checkbox"> 禁止选择</label>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <label><input class="aui-checkbox" type="radio" name="checkbox"> 这是一个列表项</label>
+                </div>
+            </li>
+        </ul>
+    </div> -->
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript" src="../script/aui-range.js" ></script>
+<script type="text/javascript">
+	$.ajax({
+			url: 'https://api.map.baidu.com/location/ip?ak=HQi0eHpVOLlRuIFlsTZNGlYvqLO56un3&coor=bd09ll',
+			type: 'POST',
+			dataType: 'JSONP',
+			async: false,
+			//          cache: true,  //是否缓存 可以为false
+			success: function(data) {
+				sessionStorage.x = data.content.point.x;
+				sessionStorage.y = data.content.point.y;
+				$(".my-project-address").val(data.content.address);
+				alert(sessionStorage.x);
+				alert(sessionStorage.y);
+				// $("#btn").html(JSON.stringify(data));
+				console.log(data);
+			},
+			error: function(data) {
+				//  alert(JSON.stringify(data));  
+			}
+		});
+
+   $(".login-btn").click(function() {
+   	var json = {
+   		"username": $(".inputUsername").val(),
+   		"password": $(".inputPassword").val()
+   	};
+   	var jsondata;
+   	jsondata = JSON.stringify(json);
+   	console.log(jsondata);
+   	$.ajax({
+   		async: true,
+   		type: "POST",
+   		url: 'http://139.199.86.115:8080/ProjectForDaChuang/loginByPass',
+   		data: jsondata,
+   		dataType: "json",
+   		contentType: 'application/json;charset=UTF-8',
+   		success: function(result) {
+   			console.log(result);
+   			if (result.code == 200) {
+   				alert("登陆成功");
+   			// sessionStorage.login = "true";
+   				sessionStorage.token = result.data.newToken;
+   				// alert(sessionStorage.token);
+   				sessionStorage.username = $("#inputUsername").val();
+				sessionStorage.login="login";
+   				sessionStorage.userid=result.data.userId;
+   				window.location.href = "../mobilePages/index1.html"
+   				
+   			} else {
+   				alert("登陆失败");
+   			}
+   		}
+   	})
+   })
+
+</script>
+</html></strong>

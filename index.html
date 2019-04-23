@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://cdn.bootcss.com/three.js/r68/three.min.js"></script>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="mobilePages/index1.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control searchContent" placeholder="搜索&hellip;">
+						</div>
+						<button type="button" class="btn btn-default search-btn"><i class="fa fa-search search" aria-hidden="true"></i></button>
+					</form>
+					<ul class="nav navbar-nav">
+						<li><a id="create-projs" class="hidden-xs" href="pages/create-projs.html">发布项目</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="pages/registe.html">注册</a></li>
+						<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="pages/registe.html">/</a></li>
+						<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="pages/login.html">登陆</a></li>
+						<li>
+							<div class="navbar-touxiang"><img src="img/touxiangalt.png" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="pages/create-projs.html">发布项目</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="pages/registe.html">注册</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="pages/login.html">登陆</a></li>
+						<li><a href="pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="index-div">
+			<div id="canvas" class="hot-person-div gradient">
+				<h4 class="gongYiDaRen">公益达人</h4>
+				<div class="hot-person-inner-div container-fluid">
+					<div>
+						<i class="col-md-2 col-sm-2 col-xs-2">1莱布尼兹</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">2欧拉</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">3柯西</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">4伯努利</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">5拉格朗日</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">6阿基米德</i>
+					</div>
+					<div class="one-six">
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b1.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b2.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b3.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b4.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b5.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
+					</div>
+
+					<div class="seven-twelve">
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b5.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b4.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b3.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b2.jpg" alt=""></div>
+						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b1.jpg" alt=""></div>
+					</div>
+					<div>
+						<i class="col-md-2 col-sm-2 col-xs-2">7牛顿</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">8亚里士多德</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">9洛必达</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">10泰勒</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">11哈密顿</i>
+						<i class="col-md-2 col-sm-2 col-xs-2">12欧几里得</i>
+					</div>
+				</div>
+				<div class="hot-project-div-2 container-fluid hidden-lg hidden-md" style="width: 100%;">
+					<h4 class="remeng">热门项目</h4>
+					<div class="container-fluid">
+						<div class="row">
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">1这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">2这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">3这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">4这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">5这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">6这是一个项目</a><br>
+						</div>
+						<div class="row">
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">7这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">8这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">9这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">10这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">11这是一个项目</a>
+							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">12这是一个项目</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="canvas" class="gradient hot-project-div">
+				<div class="hot-project-inner-div container-fluid ">
+					<h4>热门项目</h4>
+					<div>
+						<i>1</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>2</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>3</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>4</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>5</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>6</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>7</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>8</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>9</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>10</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>11</i><a class="hot-project-a" href="">这是一个项目</a><br>
+						<i>12</i><a class="hot-project-a" href="">这是一个项目</a><br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<nav id="canvas" class="gradient navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+	</body>
+	<script type="text/javascript">
+		$(".search-btn").click(function(){
+			sessionStorage.searchContent=$(".searchContent").val();
+			window.location.href="pages/search-result.html";
+			
+		})
+		$("body").height($(window).height());
+		// $(".touxiang").height($(".navbar-touxaing").width());
+		$("#create-projs").click(function(){
+			if(sessionStorage.login!="true"){
+				return false;
+			}
+			
+		})
+		if(sessionStorage.login=="true"){
+			var json = {
+				"username": sessionStorage.username,
+				"token": sessionStorage.token
+			}
+			var jsondata;
+			jsondata = JSON.stringify(json);
+			console.log(json);
+			$.ajax({
+				async: true,
+				type: 'post',
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.content.token;
+						// alert(result.data.content.userNick);
+						$(".username-label").text(result.data.content.userNick);
+						$(".sex-label").text(result.data.content.userSex);
+						$(".job-label").text(result.data.content.userIdentify);
+						$(".address-label").text(result.data.content.userAddress);
+						$(".phone-label").text(result.data.content.userPhone);
+						$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+					} else {
+						alert("no");
+					}
+				}
+			})
+			
+		}
+		// alert(sessionStorage.touxiangurl);
+// 		if (sessionStorage.touxiangurl != null) {
+// 			var json = {
+// 				"username": sessionStorage.username,
+// 				"token": sessionStorage.token
+// 			}
+// 			var jsondata;
+// 			jsondata = JSON.stringify(json);
+// 			console.log(json);
+// 			var xmlhttp;
+// 			xmlhttp = new XMLHttpRequest();
+// 			xmlhttp.open("POST", "http://139.199.86.115:8080/ProjectForDaChuang/downLoadHeadPicture", true);
+// 			xmlhttp.setRequestHeader("Content-Type", "application/json");
+// 			xmlhttp.responseType = "blob";
+// 			xmlhttp.onload = function() {
+// 				console.log(this.response);
+// 				if (this.status == 200) {
+// 					var blob = this.response;
+// 					var img = document.createElement("img");
+// 					img.onload = function(e) {
+// 						window.URL.revokeObjectURL(img.src);
+// 					};
+// 					// img.src = window.URL.createObjectURL(blob);
+// 					// document.body.appendChild(img);
+// 					sessionStorage.touxiangurl = window.URL.createObjectURL(blob);
+// 					// alert(localStorage.touxiangurl);
+// 					$(".person-center-touxiang").attr("src", window.URL.createObjectURL(blob));
+// 					$(".touxiang").attr("src", window.URL.createObjectURL(blob));
+// 				}
+// 			}
+// 			xmlhttp.send(jsondata);
+// 		}
+		var x;
+		var y;
+		$(window).resize(function() { //当浏览器大小变化时
+			if ($(window).width() <= 1000 && y != null) {
+				x = $(".hot-project-div").detach();
+				$(".hot-person-div").css("width", "100%");
+				$(".hot-person-div").css("margin-left", "0");
+				$(".hot-person-inner-div ").after(y);
+				y = null;
+
+			}
+			if ($(window).width() >= 1001 && x != null) {
+				y = $(".hot-project-div-2").detach();
+				$(".hot-person-div").css("width", "77%");
+				$(".hot-person-div").css("margin-left", "15px");
+				$(".hot-person-div").after(x);
+				x = null;
+			}
+
+		});
+		if ($(window).width() <= 1000) {
+			x = $(".hot-project-div").detach();
+			$(".hot-person-div").css("width", "100%");
+			$(".hot-person-div").css("margin-left", "0");
+			$(".hot-person-inner-div ").after(y);
+		}
+		if ($(window).width() >= 1001) {
+			y = $(".hot-project-div-2").detach();
+			$(".hot-person-div").css("width", "77%");
+			$(".hot-person-div").css("margin-left", "15px");
+			$(".hot-person-div").after(x);
+		}
+		$(".navbar-touxiang").width($(".navbar-touxaing").height());
+		$(".navbar-touxiang").click(function() {
+			window.location.href = "pages/person-center.html";
+		});
+		var i = 1;
+		$("address").click(function() {
+			if (i == 12) {
+				i = 1;
+			}
+			var str = "";
+			str = "url(img/bgc" + i + ".jpg) no-repeat  center";
+			$(".navbar").css("background", str);
+			$(".navbar").css("background-size", "cover");
+			$(".hot-project-div ").css("background", str);
+			$(".hot-project-div ").css("background-size", "cover");
+			i++;
+		});
+		
+	</script>
+</html>

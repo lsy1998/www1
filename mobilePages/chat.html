@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>AUI快速完成布局</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+	<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+       
+        .aui-list .wechat-avatar {
+            width:3rem;
+        }
+        .wechat-avatar .aui-row-padded {
+            background-color: #dddee0;
+            padding: 0.1rem;
+            border-radius: 0.2rem;
+            margin-left: -0.05rem;
+            margin-right: -0.05rem;
+        }
+        .wechat-avatar .aui-row-padded [class*=aui-col-xs-] {
+            padding: 0.05rem;
+        }
+        .wechat-avatar,
+        .wechat-avatar > img {
+            border-radius:0.2rem;
+        }
+    </style>
+</head>
+<body>
+	<header class="aui-bar aui-bar-nav" id="aui-header">
+		<a href="index.html" class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+			<span class="">志愿服务</span>
+		</a>
+		<div class="aui-title">志愿服务</div>
+	</header>
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-media-list">
+            
+            <li class="aui-list-item aui-list-item-middle wechat-top">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media wechat-avatar">
+                        <div class="aui-badge">9</div>
+                        <div class="aui-row-padded">
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-4">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">交流群</div>
+                            <div class="aui-list-item-right">08:00</div>
+                        </div>
+                        <div class="aui-list-item-text aui-font-size-12">
+                            流浪男:欢迎使用
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle wechat-top">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media wechat-avatar">
+                        <div class="aui-row-padded">
+                            <div class="aui-col-xs-6">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-6">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-6">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                            <div class="aui-col-xs-6">
+                                <img src="../img/a0.jpg" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">讨论组</div>
+                            <div class="aui-list-item-right">08:00</div>
+                        </div>
+                        <div class="aui-list-item-text aui-font-size-12">
+                           官方网站 
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media wechat-avatar">
+                        <div class="aui-badge">9</div>
+                        <img src="../img/a0.jpg" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">流浪男</div>
+                            <div class="aui-list-item-right">星期一</div>
+                        </div>
+                        <div class="aui-list-item-text aui-font-size-12">
+                            Hello 
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media wechat-avatar">
+                        <img src="../img/a0.jpg" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">张三</div>
+                            <div class="aui-list-item-right">1天前</div>
+                        </div>
+                        <div class="aui-list-item-text aui-font-size-12">
+                            Hello
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media wechat-avatar">
+                        
+                        <img src="../img/a0.jpg" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">李四</div>
+                            <div class="aui-list-item-right">星期一</div>
+                        </div>
+                        <div class="aui-list-item-text aui-font-size-12">
+                            Hello 
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+	<footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+		<div class="aui-bar-tab-item  home" tapmode>
+			<i class="fa fa-home"></i>
+			<div class="aui-bar-tab-label">首页</div>
+		</div>
+		<div class="aui-bar-tab-item favorite" tapmode>
+			<i class="fa fa-heart"></i>
+			<div class="aui-bar-tab-label">收藏</div>
+		</div>
+		<div class="aui-bar-tab-item chat" tapmode>
+			<div class="aui-badge">99</div>
+			<i class="fa fa-comments"></i>
+			<div class="aui-bar-tab-label">聊天</div>
+		</div>
+		<div class="aui-bar-tab-item my" tapmode>
+			<div class="aui-dot"></div>
+			<i class="fa fa-user"></i>
+			<div class="aui-bar-tab-label">我的</div>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript">
+	$(".my").click(function() {
+		window.location.href="../mobilePages/my.html"
+	})
+	$(".chat").click(function() {
+		window.location.href="./chat.html"
+	})
+	$(".home").click(function() {
+		window.location.href="./index1.html"
+	})
+	$(".favorite").click(function() {
+		
+	})
+</script>
+</html>

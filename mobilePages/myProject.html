@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" href="../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="../js/aui-slide.js"></script>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav" id="aui-header">
+			<a href="index.html" class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+				<span class="">志愿服务</span>
+			</a>
+			<div class="aui-title">志愿服务</div>
+		</header>
+		 
+		<div class="content">
+			<section class="aui-content home-part">
+
+
+
+			</section>
+			
+			
+			
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../js/api.js"></script>
+	<script type="text/javascript">
+		
+		  
+		
+		if (sessionStorage.login == "login") {
+
+		var json1 = {
+			"token": sessionStorage.token
+		}
+		var jsondata1;
+		jsondata1 = JSON.stringify(json1);
+		console.log(json1);
+
+		$.ajax({
+			async: true,
+			type: 'post',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/getIssueInfoByUser',
+			data: jsondata1,
+			dataType: "json",
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				console.log(result);
+				if (result.code == 200) {
+					if (result.data.content.length == 0) {
+
+						$(".project-container").append('<div class="project"><br><h1>还没有项目！</h1><br><h1>快去发布一个项目吧！</h1><br></div>');
+					}
+					// sessionStorage.token = result.data.content[0].token;
+					// alert(result.data.content.userNick);
+					var i = 0;
+					console.log(result.data.content.length);
+					sessionStorage.projlength = result.data.content.list.length - 1;
+					console.log(sessionStorage.projlength);
+                    sessionStorage.myProjectNumber=result.data.content.length;
+					for (i = result.data.content.list.length - 1; i >= 0; i--) {
+						var str ='<div data-index="';
+						str+=i;
+						str+='" class="aui-card-list project"><div class="aui-card-list-header aui-card-list-user"><div class="aui-card-list-user-avatar"><img class="aui-img-round touxiang touxiang';
+						str += i;
+						str += '" src="../image/demo1.png">';
+						str += '</div><div class="aui-card-list-user-name"><div class="aui-text-info username username';
+						str += i;
+						str += '"></div>';
+						str += '<div class="aui-font-size-14 text-light projectType projectType';
+						str += i;
+						str += '">#房地产圈</div></div>';
+						str += '<div class="aui-card-list-user-info text-light time time';
+						str += i;
+						str += '">31分钟前</div></div>';
+						str += '<div class="aui-card-list-content-padded aui-padded-t-5 aui-padded-b-5 projectTopic projectTopic';
+						str += i;
+						str += '">';
+						str += '近日，俄军最高统帅部组织了第五届全军炮兵旅预备队实地演练，出动了大批重型火炮，';
+						str += '</div><div class="aui-card-list-content"><div class="aui-row aui-row-padded pic-vid pic-vid';
+						str += i;
+						str += '"></div></div>';
+						str += '<div class="aui-card-list-footer text-light aui-font-size-14"><div class="favorite favorite';
+						str += i;
+						str += '"><i class="fa fa-heart-o"></i> 888</div>';
+						str += '<div class="comment comment';
+						str += i;
+						str += '"><i class="fa fa-commenting-o"></i> 666</div>';
+						str += '<div class="support support';
+						str += i;
+						str += '"><i class="fa fa-thumbs-o-up"></i> 888</div></div></div><input type="text" class="projectId hidden-lg hidden-md hidden-sm hidden-xs projectId';
+						str += i;
+						str += '"/>';
+						$(".home-part").append(str);
+						var touxiangstr = '.touxiang';
+						touxiangstr += i;
+						var projdetailstr = '.projectTopic';
+						projdetailstr += i;
+						var projusernamestr = '.username';
+						projusernamestr += i;
+						sessionStorage.nick = projusernamestr;
+						var projtimestr = '.time';
+						projtimestr += i;
+						var favoritestr = '.favorite';
+						favoritestr += i;
+						favoritestr += ' i';
+						var projectIdstr = '.projectId';
+						projectIdstr += i;
+						$(favoritestr).click(function() {
+
+						})
+						var Typestr = '.projectType';
+						Typestr += i;
+						$(projusernamestr).html(result.data.content.list[i].projectPrincipalName);
+						$(projdetailstr).html(result.data.content.list[i].projectContent);
+						$(projtimestr).html(result.data.content.list[i].projectIssueTime);
+						$(projectIdstr).html(result.data.content.list[i].projectId);
+						if (result.data.content.list[i].favorite == null) {
+							$(favoritestr).removeClass("fa-heart");
+							$(favoritestr).addClass("fa-heart-o");
+						} else {
+							$(favoritestr).removeClass("fa-heart-o");
+							$(favoritestr).addClass("fa-heart");
+						}
+						var projectTypestr = '';
+						if (result.data.content.list[i].projectTypeId == 1) {
+							projectTypestr = '环境清洁';
+						}
+						if (result.data.content.list[i].projectTypeId == 2) {
+							projectTypestr = '宣传教育';
+						}
+						if (result.data.content.list[i].projectTypeId == 3) {
+							projectTypestr = '社区关爱';
+						}
+						if (result.data.content.list[i].projectTypeId == 4) {
+							projectTypestr = '环境清洁';
+						}
+						if (result.data.content.list[i].projectTypeId == 5) {
+							projectTypestr = '助农增收';
+						}
+						if (result.data.content.list[i].projectTypeId == 6) {
+							projectTypestr = '设备维修';
+						}
+						if (result.data.content.list[i].projectTypeId == 7) {
+							projectTypestr = '绿化种植';
+						}
+						$(Typestr).html("#" + projectTypestr);
+
+
+
+
+						var json1 = {
+							"token": sessionStorage.token,
+							"userId": parseInt(sessionStorage.userid)
+						};
+						var jsondata1;
+						jsondata1 = JSON.stringify(json1);
+						console.log(jsondata1);
+						$.ajax({
+							async: false,
+							type: "POST",
+							url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
+							data: jsondata1,
+							dataType: "json",
+							contentType: 'application/json;charset=UTF-8',
+							success: function(result) {
+								console.log(result);
+								if (result.code == 200) {
+									sessionStorage.token = result.data.content.token;
+									// alert(result.data.content.userNick);
+									// 									$(".username-label").text(result.data.content.userNick);
+									// 									$(".sex-label").text(result.data.content.userSex);
+									// 									$(".job-label").text(result.data.content.userIdentify);
+									// 									$(".address-label").text(result.data.content.userAddress);
+									// 									$(".phone-label").text(result.data.content.userPhone);
+									// 									$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+									$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+								} else {
+									alert("no");
+								}
+							}
+						})
+
+					}
+					
+					var aLi = document.getElementsByClassName('project');
+					var y = 0;
+					for (y = 0; y < aLi.length; y++) {
+						aLi[y].index = y;
+						aLi[y].onclick = function() {
+							// 							var a=parseInt(sessionStorage.length);
+							// 							alert(a);
+							sessionStorage.projId = $(".projectId:eq(" + (parseInt(sessionStorage.projlength) - parseInt($(this).attr(
+								"data-index"))) + ")").text();
+							alert(sessionStorage.projId);
+							window.location.href = "../mobilePages/detail.html";
+							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+						}
+					}
+					
+					
+					var json1 = {
+						"token": sessionStorage.token,
+						"userId": parseInt(sessionStorage.userid)
+					};
+					var jsondata1;
+					jsondata1 = JSON.stringify(json1);
+					console.log(jsondata1);
+					$.ajax({
+						async: false,
+						type: "POST",
+						url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
+						data: jsondata1,
+						dataType: "json",
+						contentType: 'application/json;charset=UTF-8',
+						success: function(result) {
+							console.log(result);
+							if (result.code == 200) {
+								sessionStorage.token = result.data.content.token;
+								// alert(result.data.content.userNick);
+								// 								$(".username-label").text(result.data.content.userNick);
+								// 								$(".sex-label").text(result.data.content.userSex);
+								// 								$(".job-label").text(result.data.content.userIdentify);
+								// 								$(".address-label").text(result.data.content.userAddress);
+								// 								$(".phone-label").text(result.data.content.userPhone);
+								// 								$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+								$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+							} else {
+								alert("no");
+							}
+						}
+					})
+				}
+				
+				
+				
+			}
+		})
+}
+
+
+
+		$(".my").click(function() {
+			window.location.href="../mobilePages/my.html"
+		})
+		$(".chat").click(function() {
+			
+		})
+		$(".home").click(function() {
+			
+		})
+		$(".favorite").click(function() {
+			
+		})
+	</script>
+</html>

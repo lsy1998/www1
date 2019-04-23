@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+		<!-- <link rel="stylesheet" href="../css/bootstrapValidator.min.css" /> -->
+		<!-- <link rel="stylesheet" href="../css/webuploader.css"> -->
+		<link rel="stylesheet" href="../css/style.css">
+			<link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+		<!-- <link rel="stylesheet" type="text/css" media="all" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/fileinput.css" /> -->
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script> -->
+	
+		<script src="../js/bootstrapValidator.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="../js/moment.js"></script> -->
+		<!-- <script type="text/javascript" src="../js/daterangepicker.js"></script>
+		<script src="../js/cityselect.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/webuploader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fileinput.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fileinput_locale_zh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/purify.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/sortable.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/piexif.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/theme.js" type="text/javascript" charset="utf-8"></script> -->
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="搜索&hellip;">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+						<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">/</a></li>
+						<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li>
+						<li>
+							<div class="navbar-touxiang"><img src="#" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/login.html">登陆</a></li>
+						<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<form action="" method="" class="pics-videos" id="pics-videos">
+			<!-- hidden-lg hidden-md hidden-sm hidden-xs -->
+
+
+			<input id="pic-video-file0" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file1" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file2" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file3" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file4" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file5" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file6" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file7" class="pics-videos-file" type="file" name="file" />
+			<input id="pic-video-file8" class="pics-videos-file" type="file" name="file" />
+			<input name="username" id="username" class="pics-videos-file" type="text" />
+			<input name="token" id="token" class="pics-videos-file" type="text" />
+			<input name="projectId" id="project_id" class="pics-videos-file" type="text" />
+
+		</form>
+		<div class="create-projs-div">
+			<div class="create-projs-inner-div">
+				<form action="">
+					<form class="form-horizontal">
+						<div class="form-group upload-projs-pics1">
+							<label for="inputPassword3" class="col-sm-3 col-md-3 control-label">图片</label>
+							<div class="add-div col-sm-9 col-md-9">
+								<!-- <div id="" class="add-pic-div col-sm-3 col-md-3"> -->
+								<img id="add-pic0" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic1" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic2" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic3" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic4" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic5" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic6" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic7" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+								<img id="add-pic8" class="add-pic col-lg-4 col-md-4 col-sm-4 col-xs-4" src="../img/jiahao.jpg">
+
+								<!-- </div> -->
+								<script type="text/javascript">
+									$("#add-pic1").hide();
+									$("#add-pic2").hide();
+									$("#add-pic3").hide();
+									$("#add-pic4").hide();
+									$("#add-pic5").hide();
+									$("#add-pic6").hide();
+									$("#add-pic7").hide();
+									$("#add-pic8").hide();
+									$(".pics-videos-file").hide();
+								</script>
+							</div>
+						</div>
+
+						<div class="form-group upload-projs-pics2">
+							<label for="inputPassword3" class="col-sm-3 control-label"></label>
+							<div class="col-sm-9">
+
+							</div>
+						</div>
+
+
+
+						<div class="form-group upload-projs-pics3">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button type="button" class="btn0 btn btn-default">上传</button>
+								<button type="button" class="btn1 btn btn-default">继续上传视频</button>
+							</div>
+						</div>
+
+					</form>
+				</form>
+
+			</div>
+		</div>
+
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+	</body>
+	<script type="text/javascript">
+		$("#add-pic0").click(function() {
+			// $("#add-pic1").show();
+			$("#pic-video-file0").click();
+		})
+		$("#add-pic1").click(function() {
+			// $("#add-pic2").show();
+			$("#pic-video-file1").click();
+		})
+		$("#add-pic2").click(function() {
+			// $("#add-pic3").show();
+			$("#pic-video-file2").click();
+		})
+		$("#add-pic3").click(function() {
+			// $("#add-pic4").show();
+			$("#pic-video-file3").click();
+		})
+		$("#add-pic4").click(function() {
+			// $("#add-pic5").show();
+			$("#pic-video-file4").click();
+		})
+		$("#add-pic5").click(function() {
+			// $("#add-pic6").show();
+			$("#pic-video-file5").click();
+		})
+		$("#add-pic6").click(function() {
+			// $("#add-pic7").show();
+			$("#pic-video-file6").click();
+		})
+		$("#add-pic7").click(function() {
+			// $("#add-pic8").show();
+			$("#pic-video-file7").click();
+		})
+		$("#add-pic8").click(function() {
+			// $("#add-pic9").show();
+			$("#pic-video-file8").click();
+		})
+		$("#pic-video-file0").change(function() {
+			$("#add-pic0").attr("src", URL.createObjectURL($("#pic-video-file0")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic1").show();
+		})
+		$("#pic-video-file1").change(function() {
+			$("#add-pic1").attr("src", URL.createObjectURL($("#pic-video-file1")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic2").show();
+		})
+		$("#pic-video-file2").change(function() {
+			$("#add-pic2").attr("src", URL.createObjectURL($("#pic-video-file2")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic3").show();
+		})
+		$("#pic-video-file3").change(function() {
+			$("#add-pic3").attr("src", URL.createObjectURL($("#pic-video-file3")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic4").show();
+		})
+		$("#pic-video-file4").change(function() {
+			$("#add-pic4").attr("src", URL.createObjectURL($("#pic-video-file4")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic5").show();
+		})
+		$("#pic-video-file5").change(function() {
+			$("#add-pic5").attr("src", URL.createObjectURL($("#pic-video-file5")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic6").show();
+		})
+		$("#pic-video-file6").change(function() {
+			$("#add-pic6").attr("src", URL.createObjectURL($("#pic-video-file6")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic7").show();
+		})
+		$("#pic-video-file7").change(function() {
+			$("#add-pic7").attr("src", URL.createObjectURL($("#pic-video-file7")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic8").show();
+		})
+		$("#pic-video-file8").change(function() {
+			$("#add-pic8").attr("src", URL.createObjectURL($("#pic-video-file8")[0].files[0])); //URL.createObjectURL($(".pics-videos")[0].files[0])
+			$("#add-pic8").show();
+		})
+		$("#username").val(sessionStorage.username);
+		$("#token").val(sessionStorage.token);
+		$("#project_id").val(sessionStorage.projId);
+		$(".btn1").click(function() {
+			var form = document.getElementById("pics-videos");
+			var formData = new FormData(form);
+			$.ajax({
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/addPicture',
+				type: 'POST',
+				data: formData,
+				dataType: 'json',
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						// alert("成功");
+						window.location.href = "../pages/upload-projs-videos.html"
+					} else {
+						alert("失败");
+					}
+				}
+			})
+		})
+		$(".btn0").click(function() {
+			var form = document.getElementById("pics-videos");
+			var formData = new FormData(form);
+			$.ajax({
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/addPicture',
+				type: 'POST',
+				data: formData,
+				dataType: 'json',
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						// alert("成功");
+						window.location.href = "../pages/person-center.html"
+					} else {
+						alert("失败");
+					}
+				}
+			})
+		})
+if(sessionStorage.login=="true"){
+			var json = {
+				"username": sessionStorage.username,
+				"token": sessionStorage.token
+			}
+			var jsondata;
+			jsondata = JSON.stringify(json);
+			console.log(json);
+			$.ajax({
+				async: true,
+				type: 'post',
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.content.token;
+						// alert(result.data.content.userNick);
+						$(".username-label").text(result.data.content.userNick);
+						$(".sex-label").text(result.data.content.userSex);
+						$(".job-label").text(result.data.content.userIdentify);
+						$(".address-label").text(result.data.content.userAddress);
+						$(".phone-label").text(result.data.content.userPhone);
+						$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+					} else {
+						alert("no");
+					}
+				}
+			})
+			
+		}
+		$(".create-projs-div").height($(window).height());
+		$(".create-projs-inner-div").height($(window).height());
+		$(window).resize(function() {
+			$(".create-projs-div").height($(window).height());
+			$(".create-projs-inner-div").height($(window).height());
+		})
+		$(".navbar-touxiang").width($(".navbar-touxaing").height());
+	</script>
+</html>

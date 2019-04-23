@@ -1,0 +1,122 @@
+<!-- <!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+    <style>
+
+        .innerDiv{
+
+            border:1px solid #cccccc;
+
+            width:500px;
+
+            height:50px
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<div style="width:500px;height:500px;background-color: #1A68A2" id="container">
+
+    <div class="innerDiv" data-index="1">1</div>
+
+    <div class="innerDiv" data-index="2">2</div>
+
+    <div class="innerDiv" data-index="3">3</div>
+
+    <div class="innerDiv" data-index="4">4</div>
+
+    <div class="innerDiv" data-index="5">5</div>
+
+    <div class="innerDiv" data-index="6">6</div>
+
+    <div class="innerDiv" data-index="7">7</div>
+
+    <div class="innerDiv" data-index="8">8</div>
+
+</div>
+
+<script>
+
+    function processInnderDiv(domDiv){
+
+        console.log('div[data-index=%s] click',domDiv.getAttribute("data-index"));
+
+    }
+
+
+
+    document.getElementById("container").addEventListener("click",function(event){
+
+        processInnderDiv(event.target);
+
+    },false);
+
+</script>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		
+		 <body>
+
+			<nav class="navbar navbar-default navbar-fixed-top gradient">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="../index.html">志愿服务</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			
+						<form class="navbar-form navbar-left">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="搜索&hellip;">
+							</div>
+							<button type="submit" class="btn btn-default">搜索</button>
+						</form>
+						<ul class="nav navbar-nav">
+							<li><a id="create-projs" class="hidden-xs" href="../pages/create-projs.html">发布项目</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+							<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">/</a></li>
+							<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li>
+							<li>
+								<div class="navbar-touxiang"><img src="#" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+							</li>
+							<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/create-projs.html">发布项目</a></li>
+							<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+							<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/login.html">登陆</a></li>
+							<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			</body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no"
+        name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>浏览器中获取当前经纬度</title>
+    <link href="../addons/weilive/style/css/user.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="app-view">
+        <video width="800" height="">
+        	<source src="" type="video/mp4"></source>
+        </video>
+    </div>
+    
+</body>
+</html>
+<!-- <!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title> 
+ <script src="http://api.map.baidu.com/api?v=2.0&ak=RXzreuP43XSELV00uSxNV7OupMyjAHEd&callback=initialize" type="text/javascript" charset="utf-8"></script>
+<!-- <style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}  
+</style>   
+<script type="text/javascript">  
+function initialize() {  
+ window.onload = loadScript;  
+ var map = new BMap.Map("container");
+ 创建地图实例  
+ var point = new BMap.Point(116.404, 39.915);
+ 创建点坐标  
+ map.centerAndZoom(point, 15); 
+}  
+   
+function loadScript() {  
+  var script = document.createElement("script");  
+  script.src = "http://api.map.baidu.com/api?v=2.0&ak=RXzreuP43XSELV00uSxNV7OupMyjAHEd&callback=initialize";
+  document.body.appendChild(script);  
+}  -->
+<!-- //    
+// window.onload = loadScript;  
+// var map = new BMap.Map("container");
+// 创建地图实例  
+// var point = new BMap.Point(116.404, 39.915);
+// 创建点坐标  
+// map.centerAndZoom(point, 15); -->
+<!-- </script>  
+</head>  
+<body>
+	<div id="container"></div>
+</body>  
+</html> 
+</syntaxhighlight> --> 
+<!-- <!DOCTYPE html>  
+<html>
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}  
+</style>  
+ <script src="http://api.map.baidu.com/api?v=2.0&ak=RXzreuP43XSELV00uSxNV7OupMyjAHEd" type="text/javascript" charset="utf-8"></script>
+//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+</script>
+</head>  
+ 
+<body>  
+<div id="container"></div> 
+<script type="text/javascript"> 
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(116.331398,39.897445);
+map.centerAndZoom(point,12);
+
+function myFun(result){
+	var cityName = result.name;
+	map.setCenter(cityName);
+	alert("当前定位城市:"+cityName);
+}
+var myCity = new BMap.LocalCity();
+myCity.get(myFun);
+// 初始化地图，设置中心点坐标和地图级别  
+</script>  
+</body>  
+</html> -->
+
+
+
+
+
+

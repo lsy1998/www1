@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+		<link rel="stylesheet" href="../css/bootstrapValidator.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/just-tip.css" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrapValidator.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/justTools.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../new_file.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="搜索&hellip;">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav">
+						<li><a id="create-projs" class="hidden-xs" href="../pages/create-projs.html">发布项目</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+						<!-- <li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li> -->
+						<li>
+							<div class="navbar-touxiang"><img src="../img/touxiangalt.png" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/create-projs.html">发布项目</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+						<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="login-register-div">
+			<div class="login-register-inner-div ">
+				<form action="" id="login-form">
+					<form class="form-horizontal">
+						<div class="form-group login-form-group1 col-sm-12">
+							<div class="col-sm-3">&nbsp;</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">用戶名</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="inputUsername" name="username" placeholder="">
+							</div>
+							<div class="col-sm-3">&nbsp;</div>
+						</div>
+						<div class="form-group login-form-group2 col-sm-12">
+							<div class="col-sm-3">&nbsp;</div>
+							<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+							<div class="col-sm-4">
+								<input type="password" class="form-control" name="password" id="inputPassword" placeholder="">
+							</div>
+							<div class="col-sm-3">&nbsp;</div>
+						</div>
+						<div class="form-group login-form-group3 col-sm-12">
+							<div class="col-sm-5">&nbsp;</div>
+							<div class="col-sm-2">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> 记住密码
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="checkbox">
+									<label>
+										<a href="changePassword.html">忘记密码</a>
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-3">&nbsp;</div>
+						</div>
+						<div class="form-group login-form-group4 col-sm-12">
+							<div class="col-sm-5">&nbsp;</div>
+							<div class="">
+								<div class=""><button type="" class="btn btn-default login-btn">登陆</button></div>
+							</div>
+						</div>
+					</form>
+				</form>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+	</body>
+	<script>
+		$.ajax({  
+		     url:'https://api.map.baidu.com/location/ip?ak=HQi0eHpVOLlRuIFlsTZNGlYvqLO56un3&coor=bd09ll',
+		          type: 'POST',  
+		          dataType: 'JSONP',
+		          async: false,  
+		 //          cache: true,  //是否缓存 可以为false
+		          success: function (data) {  
+		            sessionStorage.x=data.content.point.x;
+		            sessionStorage.y=data.content.point.y;
+		 // alert(sessionStorage.x);
+		 // alert(sessionStorage.y);
+		           // $("#btn").html(JSON.stringify(data));
+		           console.log(data); 
+		          },  
+		         error: function (data) {  
+		            //  alert(JSON.stringify(data));  
+		         }  
+		    }); 
+		var login = false;
+		// 		if(sessionStorage.touxiangurl!=null){
+		// 			$(".touxiang").attr("src",sessionStorage.touxiangurl);
+		// 		}
+		
+		$(".login-btn").click(function() {
+			var json = {
+				"username": $("#inputUsername").val(),
+				"password": $("#inputPassword").val()
+			};
+			var jsondata;
+			jsondata = JSON.stringify(json);
+			console.log(jsondata);
+			$.ajax({
+				async: true,
+				type: "POST",
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/loginByPass',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						alert("登陆成功");
+						sessionStorage.userid= result.data.userId;
+					    sessionStorage.login = "true";
+						sessionStorage.token = result.data.newToken;
+						// alert(sessionStorage.token);
+						sessionStorage.username = $("#inputUsername").val();
+						var json1 = {
+							"token": sessionStorage.token,
+							"userId": parseInt(sessionStorage.userid)
+						};
+						var jsondata1;
+						jsondata1 = JSON.stringify(json1);
+						console.log(jsondata1);
+						$.ajax({
+							async: false,
+							type: "POST",
+							url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
+							data: jsondata1,
+							dataType: "json",
+							contentType: 'application/json;charset=UTF-8',
+							success: function(result) {
+								console.log(result);
+								if (result.code == 404) {
+									sessionStorage.token = result.data.newToken;
+									// alert(sessionStorage.token);
+									window.location.href = "../pages/personal-information.html"
+								} else {
+						            window.location.href = "../mobilePages/index1.html"
+								}
+							}
+						})
+						
+						
+						var json = {
+							"username": sessionStorage.username,
+							"token": sessionStorage.token
+						}
+						var jsondata;
+						jsondata = JSON.stringify(json);
+						console.log(json);
+						$.ajax({
+							async: true,
+							type: 'post',
+							url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+							data: jsondata,
+							dataType: "json",
+							contentType: 'application/json;charset=UTF-8',
+							success: function(result) {
+								console.log(result);
+								if (result.code == 200) {
+									sessionStorage.token = result.data.content.token;
+									$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+								} else {
+									alert("no");
+								}
+							}
+						})
+						sessionStorage.userid=result.data.userId;
+						// window.location.href = "../pages/person-center.html"
+						
+					} else {
+						alert("登陆失败");
+					}
+				}
+			})
+		})
+		$("#inputUsername").mouseover(function() {
+			var _this = $(this);
+			_this.justToolsTip({
+				animation: "moveInRight",
+				width: "200px",
+				contents: "请输入11位手机号",
+				gravity: 'right'
+			});
+		})
+		$("#inputPassword").mouseover(function() {
+			var _this = $(this);
+			_this.justToolsTip({
+				animation: "moveInRight",
+				width: "200px",
+				contents: "请输入6-16位密码",
+				gravity: 'right'
+			});
+		})
+		var y;
+		$(window).resize(function() {
+			var x;
+			x = $(window).height();
+			$(".login-register-div").height($(window).height() * 0.6);
+			$(".login-register-inner-div").height($(window).height() * 0.4);
+			$(".login-register-div").css("margin-top", x * 0.2)
+			$(".login-register-inner-div").css("margin-top", x * 0.15)
+		});
+		y = $(window).height();
+		$(".login-register-div").height($(window).height() * 0.6);
+		$(".login-register-inner-div").height($(window).height() * 0.4);
+		$(".login-register-div").css("margin-top", y * 0.2)
+		$(".login-register-inner-div").css("margin-top", y * 0.15)
+
+
+		// 		$(".login-btn").click(function(){
+		// 			var loginstr = $("#login-form").serialize();
+		// 			alert(loginstr);
+		// 		})
+		$(".navbar-touxiang").click(function() {
+			if (sessionStorage.login == "true") {
+				window.location.href = "../pages/person-center.html";
+			}
+		});
+		$(function() {
+			$('form').bootstrapValidator({
+				message: 'This value is not valid',
+				feedbackIcons: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+				fields: {
+					username: {
+						message: '用户名验证失败',
+						validators: {
+							notEmpty: {
+								message: '用户名不能为空'
+							},
+							stringLength: {
+								min: 6,
+								max: 18,
+								message: '用户名长度必须在6到18位之间'
+							},
+							regexp: {
+								regexp: /^[a-zA-Z0-9_]+$/,
+								message: '用户名只能包含大写、小写、数字和下划线'
+							}
+						}
+					},
+					password: {
+						message: '密码错误',
+						validators: {
+							notEmpty: {
+								message: '密码不能为空'
+							},
+							stringLength: {
+								min: 6,
+								max: 18,
+								message: '密码长度必须在6到18位之间'
+							},
+
+						}
+					}
+				}
+			});
+		});
+	</script>
+</html>

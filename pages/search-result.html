@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cropperImg.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cropper.min.css" />
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+		<link rel="stylesheet" href="../css/video-js.min.css">
+		<link rel="stylesheet" href="../css/share.css">
+		<link rel="stylesheet" type="text/css" href="../css/comment.css" />
+		<link rel="stylesheet" type="text/css" href="../css/comment-style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/just-tip.css" />
+
+
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cropper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cropperImg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/video.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/share.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.flexText.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/justTools.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	<body>
+
+
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="搜索&hellip;">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav">
+						<li><a id="create-projs" class="hidden-xs" href="../pages/create-projs.html">发布项目</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+						<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">/</a></li>
+						<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li>
+						<li>
+							<div class="navbar-touxiang"><img src="#" class="nav-touxiang touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/create-projs.html">发布项目</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/login.html">登陆</a></li>
+						<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="person-center-div">
+
+			<div class="person-center-inner-div">
+				<form action="">
+					<form class="form-horizontal">
+						<div class="form-group person-center-form-group1 container-fluid">
+
+						</div>
+			</div>
+
+			<div class="person-center-form-group2">
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="tabbable" id="tabs-726008">
+								<div class="tab-content" style="">
+									<div class="project-container tab-pane active" id="panel1" style="">
+
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</form>
+			</form>
+		</div>
+
+
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+
+	</body>
+	<script type="text/javascript">
+		var json = {
+			"username": sessionStorage.username,
+			"token": sessionStorage.token
+		}
+		var jsondata;
+		jsondata = JSON.stringify(json);
+		console.log(json);
+		$.ajax({
+			async: false,
+			type: 'post',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+			data: jsondata,
+			dataType: "json",
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				console.log(result);
+				if (result.code == 200) {
+					sessionStorage.token = result.data.content.token;
+					// $(sessionStorage.nick).text(result.data.content.userNick);
+		            $(".nav-touxiang").attr("src",result.data.content.userHeadPictureLink);
+							
+				} else {
+					alert("no");
+				}
+			}
+		})
+		var json={
+			"token":sessionStorage.token,
+			"projectContent":sessionStorage.searchContent
+		}
+		var jsondata;
+		jsondata = JSON.stringify(json);
+		console.log(json);
+		$.ajax({
+			async: true,
+			type: 'post',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/SelectIssueByBlur',
+			data: jsondata,
+			dataType: "json",
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				console.log(result);
+				if (result.code == 200) {
+					sessionStorage.projlength = result.data.content.list.length-1;
+					for (i = result.data.content.list.length - 1; i >= 0; i--) {
+						var str = '<div data-index="';
+						str += i;
+						str +='" class="project container-fluid"><div class="proj-content"><img src="#" class="touxiang touxiang';
+						str += i;
+						str +=' proj-touxiang navbar-left img-circle img-responsive text-center"><div class="proj-username proj-username';
+						str += i;
+						str +=
+							'"></div><br><p class="proj-detail proj-detail';
+						str += i;
+						str += '"></p></div><div class="project-buttom-bar col-md-12"><p class="proj-time';
+						str += i;
+						str += '"></p><p class="some topic';
+						str += i;
+						str += '"></p><p class="some peopleNumber';
+						str += i;
+						str += '"></p><p class="some address';
+						str += i;
+						str +=
+							'"></p>	</div></div><input type="text" class="projectId hidden-lg hidden-md hidden-sm hidden-xs projectId';
+						str += i;
+						str += '"/>';
+						var projdetailstr = '.proj-detail';
+						projdetailstr += i;
+						var projtouxiangstr = '.touxiang';
+						projtouxiangstr += i;
+						var projusernamestr = '.proj-username';
+						projusernamestr += i;
+						sessionStorage.nick = projusernamestr;
+						var projtimestr = '.proj-time';
+						projtimestr += i;
+						var peopleNumberstr = '.peopleNumber';
+						peopleNumberstr += i;
+						var topicstr = '.topic';
+						topicstr += i;
+						var addressstr = '.address';
+						addressstr += i;
+						var projectIdstr = '.projectId';
+						projectIdstr += i;
+						$(".project-container").append(str);
+					    // sessionStorage.username=result.data.content.list[i].username;
+						var json = {
+							"username": result.data.content.list[i].username,
+							"token": sessionStorage.token
+						}
+						var jsondata;
+						jsondata = JSON.stringify(json);
+						console.log(json);
+						$.ajax({
+							async: false,
+							type: 'post',
+							url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+							data: jsondata,
+							dataType: "json",
+							contentType: 'application/json;charset=UTF-8',
+							success: function(result) {
+								console.log(result);
+								if (result.code == 200) {
+									sessionStorage.token = result.data.content.token;
+									$(sessionStorage.nick).text(result.data.content.userNick);
+					                $(projtouxiangstr).attr("src",result.data.content.userHeadPictureLink);
+					
+								} else {
+									alert("no");
+								}
+							}
+						})
+					
+						$(projdetailstr).html(result.data.content.list[i].projectContent);
+						$(projtimestr).html(result.data.content.list[i].projectIssueTime);
+						$(peopleNumberstr).html(result.data.content.list[i].projectPeopleNumbers + '人');
+						$(topicstr).html(result.data.content.list[i].projectTopic);
+						$(addressstr).html(result.data.content.list[i].projectRegion);
+						$(projectIdstr).html(result.data.content.list[i].projectId);
+						
+					}
+					var aLi = document.getElementsByClassName('project');
+					var y = 0;
+					for (y = 0; y < aLi.length; y++) {
+						aLi[y].index = y;
+						aLi[y].onclick = function() {
+							sessionStorage.projId = $(".projectId:eq(" + (parseInt(sessionStorage.projlength) - parseInt($(this).attr("data-index"))) + ")").text();
+							alert(sessionStorage.projId);
+							window.location.href = "../pages/projectDetail.html";
+						}
+					}
+				} else {
+					alert("no");
+				}
+			}
+		})
+		
+		
+		
+		
+		
+		$(".person-center-touxiang").height($(".person-center-touxiang").width());
+		$(window).resize(function() {
+			$(".person-center-touxiang").height($(".person-center-touxiang").width());
+		})
+
+		$(".video-pic-div").height($(".video-pic-2").height());
+		$(".vjs-tech").height($(".video-pic-2").height());
+		$(".vjs-poster").height($(".video-pic-2").height());
+		$(".my-video").height($(".video-pic-2").height());
+		$(window).resize(function() { //当浏览器大小变化时
+			$(".video-pic-div").height($(".video-pic-2").height());
+			$(".vjs-tech").height($(".video-pic-2").height());
+			$(".vjs-poster").height($(".video-pic-2").height());
+			$(".my-video").height($(".video-pic-2").height());
+		});
+
+
+		$('.icon-external-link').shareConfig({
+			Shade: true, //是否显示遮罩层
+			Event: 'click', //触发事件
+			Content: 'Share', //内容DIV ID
+			Title: '分享至' //显示标题
+		});
+
+
+		videojs.addLanguage('zh-CN', {
+			"Play": "播放",
+			"Pause": "暂停",
+			"Current Time": "当前时间",
+			"Duration": "时长",
+			"Remaining Time": "剩余时间",
+			"Stream Type": "媒体流类型",
+			"LIVE": "直播",
+			"Loaded": "加载完毕",
+			"Progress": "进度",
+			"Fullscreen": "全屏",
+			"Non-Fullscreen": "退出全屏",
+			"Mute": "静音",
+			"Unmute": "取消静音",
+			"Playback Rate": "播放速度",
+			"Subtitles": "字幕",
+			"subtitles off": "关闭字幕",
+			"Captions": "内嵌字幕",
+			"captions off": "关闭内嵌字幕",
+			"Chapters": "节目段落",
+			"Close Modal Dialog": "关闭弹窗",
+			"Descriptions": "描述",
+			"descriptions off": "关闭描述",
+			"Audio Track": "音轨",
+			"You aborted the media playback": "视频播放被终止",
+			"A network error caused the media download to fail part-way.": "网络错误导致视频下载中途失败。",
+			"The media could not be loaded, either because the server or network failed or because the format is not supported.": "视频因格式不支持或者服务器或网络的问题无法加载。",
+			"The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "由于视频文件损坏或是该视频使用了你的浏览器不支持的功能，播放终止。",
+			"No compatible source was found for this media.": "无法找到此视频兼容的源。",
+			"The media is encrypted and we do not have the keys to decrypt it.": "视频已加密，无法解密。",
+			"Play Video": "播放视频",
+			"Close": "关闭",
+			"Modal Window": "弹窗",
+			"This is a modal window": "这是一个弹窗",
+			"This modal can be closed by pressing the Escape key or activating the close button.": "可以按ESC按键或启用关闭按钮来关闭此弹窗。",
+			", opens captions settings dialog": ", 开启标题设置弹窗",
+			", opens subtitles settings dialog": ", 开启字幕设置弹窗",
+			", opens descriptions settings dialog": ", 开启描述设置弹窗",
+			", selected": ", 选择",
+			"captions settings": "字幕设定",
+			"Audio Player": "音频播放器",
+			"Video Player": "视频播放器",
+			"Replay": "重播",
+			"Progress Bar": "进度小节",
+			"Volume Level": "音量",
+			"subtitles settings": "字幕设定",
+			"descriptions settings": "描述设定",
+			"Text": "文字",
+			"White": "白",
+			"Black": "黑",
+			"Red": "红",
+			"Green": "绿",
+			"Blue": "蓝",
+			"Yellow": "黄",
+			"Magenta": "紫红",
+			"Cyan": "青",
+			"Background": "背景",
+			"Window": "视窗",
+			"Transparent": "透明",
+			"Semi-Transparent": "半透明",
+			"Opaque": "不透明",
+			"Font Size": "字体尺寸",
+			"Text Edge Style": "字体边缘样式",
+			"None": "无",
+			"Raised": "浮雕",
+			"Depressed": "压低",
+			"Uniform": "均匀",
+			"Dropshadow": "下阴影",
+			"Font Family": "字体库",
+			"Proportional Sans-Serif": "比例无细体",
+			"Monospace Sans-Serif": "单间隔无细体",
+			"Proportional Serif": "比例细体",
+			"Monospace Serif": "单间隔细体",
+			"Casual": "舒适",
+			"Script": "手写体",
+			"Small Caps": "小型大写字体",
+			"Reset": "重启",
+			"restore all settings to the default values": "恢复全部设定至预设值",
+			"Done": "完成",
+			"Caption Settings Dialog": "字幕设定视窗",
+			"Beginning of dialog window. Escape will cancel and close the window.": "开始对话视窗。离开会取消及关闭视窗",
+			"End of dialog window.": "结束对话视窗"
+		});
+
+		var myPlayer = videojs('my-video');
+		videojs("my-video").ready(function() {
+			var myPlayer = this;
+			myPlayer.play();
+		});
+	</script>
+
+</html>

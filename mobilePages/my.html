@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+		<link rel="stylesheet" href="../css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/aui-slide.js"></script>
+	</head>
+	<body>
+		<form action="http://139.199.86.115:8080/ProjectForDaChuang/upLoadHeadPicture" id="touxiang-form" method="post" class="form-horizontal"
+		 role="form" enctype="multipart/form-data">
+			<input type="file" class="touxiang-file hidden-lg hidden-md hidden-sm hidden-xs " name="file" />
+			<input type="text" name="token" class="token hidden-lg hidden-md hidden-sm hidden-xs" value="" />
+			<input type="text" name="userId" class="userId hidden-lg hidden-md hidden-sm hidden-xs" value="" />
+		</form>
+		<header class="aui-bar aui-bar-nav" id="aui-header">
+			<a href="index.html" class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+				<span class="">志愿服务</span>
+			</a>
+			<div class="aui-title">志愿服务</div>
+		</header>
+
+		<div class="content">
+
+			<section class="aui-content user-info aui-text-center aui-margin-b-15 person-center-section">
+
+
+			</section>
+
+			<section class="aui-content person-center-section2">
+				<ul class="aui-list aui-list-noborder">
+					<div class="aui-list-header">
+						<div>
+							<i class="fa fa-list "></i>
+							个人中心
+						</div>
+					</div>
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-list-item-arrow">
+							<div class="aui-list-item-title myProject">我的项目</div>
+							<div class="aui-list-item-right my-project-number"></div>
+						</div>
+					</li>
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-list-item-arrow">
+							<div class="aui-list-item-title my-create-project">发布项目</div>
+						</div>
+					</li>
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-list-item-arrow">
+							<div class="aui-list-item-title my-exit-login">退出登录</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+			<div class="aui-bar-tab-item  home" tapmode>
+				<i class="fa fa-home"></i>
+				<div class="aui-bar-tab-label">首页</div>
+			</div>
+			<div class="aui-bar-tab-item favorite" tapmode>
+				<i class="fa fa-heart"></i>
+				<div class="aui-bar-tab-label">收藏</div>
+			</div>
+			<div class="aui-bar-tab-item chat" tapmode>
+				<div class="aui-badge">99</div>
+				<i class="fa fa-comments"></i>
+				<div class="aui-bar-tab-label">聊天</div>
+			</div>
+			<div class="aui-bar-tab-item my" tapmode>
+				<div class="aui-dot"></div>
+				<i class="fa fa-user"></i>
+				<div class="aui-bar-tab-label">我的</div>
+			</div>
+		</footer>
+	</body>
+	<script type="text/javascript" src="../js/api.js"></script>
+	<script type="text/javascript">
+		$(".myProject").click(function() {
+
+			window.location.href = "./myProject.html";
+		})
+		$(".my-exit-login").click(function() {
+			sessionStorage.login = 'exit';
+			window.location.href = "../mobilePages/my.html";
+		})
+		$(".my-create-project").click(function() {
+			window.location.href = "../mobilePages/createProject.html";
+		})
+		if (sessionStorage.login == "login") {
+			$(".login").remove();
+			$(".person-center-section").append(
+				'<section class="aui-content aui-text-center person-center-section1"><img src="" class="img-circle img-responsive text-center my-touxiang" style="width: 200px; height:200px; display: inline-block; margin-top: 10px;"><h2 class="aui-margin-t-15"><span class="my-nick">AAA</span><span class="fa fa-pencil" style="margin-left: 10px;"></span></h2><div class="aui-row aui-margin-t-15"><div class="text-center my-address">我是一个孤独的根号三</div></div></section>'
+			)
+			// $(".person-center-section1").show();
+
+			var json1 = {
+				"token": sessionStorage.token,
+				"userId": parseInt(sessionStorage.userid)
+			};
+			var jsondata1;
+			jsondata1 = JSON.stringify(json1);
+			console.log(jsondata1);
+			$.ajax({
+				async: false,
+				type: "POST",
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
+				data: jsondata1,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.content.token;
+						$(".my-address").text(result.data.content.userAddress);
+						$(".my-nick").text(result.data.content.userNick);
+						$(".my-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						// alert(result.data.content.userNick);
+						// 									$(".username-label").text(result.data.content.userNick);
+						// 									$(".sex-label").text(result.data.content.userSex);
+						// 									$(".job-label").text(result.data.content.userIdentify);
+						// 									$(".address-label").text(result.data.content.userAddress);
+						// 									$(".phone-label").text(result.data.content.userPhone);
+						// 									$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						$(".my-touxiang").attr("src", result.data.content.userHeadPictureLink);
+					} else {
+						alert("no");
+					}
+				}
+			})
+			// $(".aui-slide3").hide();
+		} else {
+			$(".person-center-section").append(
+				'<div class="aui-row aui-margin-t-15"><div class="text-center login"><i class="fa fa-mobile fa-4x" style="color: rgb(3, 169, 244);"></i></div><div class="text-center login">登录/注册</div></div>'
+			);
+			$(".person-center-section1").hide();
+			// 			$(".person-center-section2").hide();
+		}
+
+		$(".my-touxiang").click(function() {
+			$(".touxiang-file").click();
+			$(".token").val(sessionStorage.token);
+			$(".userId").val(sessionStorage.userid);
+		})
+		$(".touxiang-file").change(function() {
+
+			var form = document.getElementById("touxiang-form");
+			var formData = new FormData(form);
+			$.ajax({
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/upLoadHeadPicture',
+				type: 'POST',
+				data: formData,
+				dataType: 'json',
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.newToken;
+						$(".my-touxiang").attr("src", URL.createObjectURL($(".touxiang-file")[0].files[0]));
+					} else {
+						alert("请重新上传！");
+					}
+				}
+			})
+		})
+
+		$(".login").click(function() {
+			window.location.href = "../mobilePages/login.html"
+		})
+
+		$(".my").click(function() {
+			$("#aui-slide3").hide();
+			alert(sessionStorage.login);
+			if (sessionStorage.login == "login") {
+				$(".my-project-number").text("共" + sessionStorage.myProjectNumber + "个项目");
+				$(".login").hide();
+				$(".person-center-section1").show();
+				var json1 = {
+					"token": sessionStorage.token,
+					"userId": parseInt(sessionStorage.userid)
+				};
+				var jsondata1;
+				jsondata1 = JSON.stringify(json1);
+				console.log(jsondata1);
+				$.ajax({
+					async: true,
+					type: "POST",
+					url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
+					data: jsondata1,
+					dataType: "json",
+					contentType: 'application/json;charset=UTF-8',
+					success: function(result) {
+						console.log(result);
+						if (result.code == 200) {
+							sessionStorage.token = result.data.content.token;
+							// alert(result.data.content.userNick);
+							// 									$(".username-label").text(result.data.content.userNick);
+							// 									$(".sex-label").text(result.data.content.userSex);
+							// 									$(".job-label").text(result.data.content.userIdentify);
+							// 									$(".address-label").text(result.data.content.userAddress);
+							$(".my-address").text(result.data.content.userAddress);
+							$(".my-nick").text(result.data.content.userNick);
+							$(".my-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						} else {
+							alert("no");
+						}
+					}
+				})
+			}
+			if (sessionStorage.login != "login") {
+				// $(".login").show();
+				$(".my-project-number").text("共0个项目");
+				$(".person-center-section").show();
+			}
+			$(".home-part").hide();
+			$(".person-center-section2").show();
+
+		})
+		$(".chat").click(function() {
+			window.location.href = "./chat.html"
+		})
+		$(".home").click(function() {
+			window.location.href = "../mobilePages/index1.html"
+		})
+		$(".favorite").click(function() {
+
+		})
+	</script>
+</html>

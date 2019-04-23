@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+		<link rel="stylesheet" href="../css/bootstrapValidator.min.css" />
+		<link rel="stylesheet" href="../css/webuploader.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" media="all" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/fileinput.css" />
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+		<!-- <script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="../js/bootstrapValidator.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/moment.js"></script>
+		<script type="text/javascript" src="../js/daterangepicker.js"></script>
+		<script src="../js/cityselect.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/webuploader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fileinput.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fileinput_locale_zh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/purify.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/sortable.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/piexif.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/theme.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top gradient">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">志愿服务</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="搜索&hellip;">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="navbar-registe hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">注册</a></li>
+						<li><a class="xiegang hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/registe.html">/</a></li>
+						<li><a class="navbar-login hidden-xs" style="padding-right:0; padding-left: 0;" href="../pages/login.html">登陆</a></li>
+						<li>
+							<div class="navbar-touxiang"><img src="#" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"></div>
+						</li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/registe.html">注册</a></li>
+						<li><a class="hidden-lg hidden-md hidden-sm" href="../pages/login.html">登陆</a></li>
+						<li><a href="../pages/person-center.html" class="hidden-lg hidden-md hidden-sm">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="create-projs-div">
+			<div class="create-projs-inner-div">
+				<form action="">
+					<form class="form-horizontal">
+						<div class="form-group change-project-information-group1">
+							<label for="inputEmail3" class="col-sm-3 control-label">项目主题</label>
+							<div class="col-sm-9">
+								<input type="text" class="projectTopic form-control" id="inputEmail3" name="" placeholder="">
+							</div>
+						</div>
+						<div class="form-group change-project-information-group2">
+							<label for="inputEmail3" class="col-sm-3 control-label">发布者</label>
+							<div class="col-sm-9">
+								<input type="text" class="projectPrincipalName form-control" id="" name="" placeholder="">
+							</div>
+						</div>
+
+						<div class="form-group change-project-information-group3">
+							<label for="inputEmail3" class="col-sm-3 control-label">招募人数</label>
+							<div class="col-sm-9">
+								<input type="text" class="projectPeopleNumbers form-control" id="inputEmail3" name="" placeholder="">
+							</div>
+						</div>
+						<!-- <div class="form-group change-project-information-group5">
+							<label for="inputPassword3" class="col-sm-3 control-label">时间</label>
+							<div class="col-sm-9">
+								<div class="input-prepend input-group">
+									<span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span><input
+									 type="text" readonly style="width: 200px" name="birthday" id="birthday" class="form-control" value="03/18/2013" />
+								</div>
+							</div>
+						</div> -->
+						<div class="form-group change-project-information-group4">
+							<label for="inputPassword3" class="col-sm-3 control-label">手机号</label>
+							<div class="col-sm-9">
+								<input type="text" class="projectPrincipalPhone form-control userPhone" name="userPhone" placeholder="手机号">
+							</div>
+						</div>
+						<div class="form-group change-project-information-group5">
+							<label for="inputPassword3" class="col-sm-3 control-label">地點</label>
+							<div class="col-sm-9">
+								<div id="city">
+									<div class="col-sm-4" style="padding-left: 0;"><select class="form-control prov"></select></div>
+									<div class="col-sm-4" style="padding-left: 0;"><select class="form-control  city" disabled="disabled"></select></div>
+									<div class="col-sm-4" style="padding-left: 0;"><select class="form-control  dist" disabled="disabled"></select></div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group change-project-information-group6">
+							<label for="inputEmail3" class="col-sm-3 control-label"></label>
+							<div class="col-sm-9">
+								<div class="col-sm-9">
+									<input type="text" class="form-control projectAddress" name="projectAddress" placeholder="村/街道/小区/详细地址">
+								</div>
+							</div>
+						</div>
+						<div class="form-group change-project-information-group7">
+							<label for="inputPassword3" class="col-sm-3 control-label">内容</label>
+							<div class="col-sm-9">
+								<textarea class="projectContent form-control" id="inputPassword3" rows="4" style="resize: none;"></textarea>
+								 <!-- <input type="textarea" class="projectContent form-control" id="inputPassword3" placeholder=""> -->
+							  </div>
+						</div> 
+
+						
+
+						<div class="form-group change-project-information-group8">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button type="button" class="btn1 btn btn-default">修改</button>
+							</div>
+						</div>
+
+					</form>
+
+				</form>
+
+			</div>
+		</div>
+
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
+				<address>桂林电子科技大学·志愿服务团队</address>
+			</div>
+		</nav>
+	</body>
+	<script type="text/javascript">
+		$(".btn1").click(function() {
+		
+			var json1 = {
+				"projectTopic": $(".projectTopic").val(),
+				"projectContent": $(".projectContent").val(),
+				"projectRegion": $(".prov").val() + $(".city").val() + $(".dist").val(),
+				"projectAddress": $(".projectAddress").val(),
+				"projectPrincipalName": $(".projectPrincipalName").val(),
+				"projectPrincipalPhone": $(".projectPrincipalPhone").val(),
+				"projectPeopleNumbers": $(".projectPeopleNumbers").val(),
+				"projectId": sessionStorage.projId,
+				// "projectTypeId": $(".projectTypeId").val(),
+				// "latitude": sessionStorage.x,
+				// "longitude": sessionStorage.y,
+				"token": sessionStorage.token,
+				// "username": sessionStorage.username
+			};
+			var jsondata1;
+			jsondata1 = JSON.stringify(json1);
+			console.log(json1);
+			$.ajax({
+				async: true,
+				type: "POST",
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/updateIssue',
+				data: jsondata1,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						// alert("成功");
+						// sessionStorage.token = result.data.newToken;
+						// sessionStorage.projId = result.data.projectId;
+						window.location.href = "../pages/projectDetail.html"
+					} else {
+						alert("失败");
+					}
+				}
+			})
+		})
+		if(sessionStorage.login=="true"){
+			var json = {
+				"username": sessionStorage.username,
+				"token": sessionStorage.token
+			}
+			var jsondata;
+			jsondata = JSON.stringify(json);
+			console.log(json);
+			$.ajax({
+				async: true,
+				type: 'post',
+				url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoByMobile',
+				data: jsondata,
+				dataType: "json",
+				contentType: 'application/json;charset=UTF-8',
+				success: function(result) {
+					console.log(result);
+					if (result.code == 200) {
+						sessionStorage.token = result.data.content.token;
+						// alert(result.data.content.userNick);
+// 						$(".username-label").text(result.data.content.userNick);
+// 						$(".sex-label").text(result.data.content.userSex);
+// 						$(".job-label").text(result.data.content.userIdentify);
+// 						$(".address-label").text(result.data.content.userAddress);
+// 						$(".phone-label").text(result.data.content.userPhone);
+// 						$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+						$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+					} else {
+						alert("no");
+					}
+				}
+			})
+			
+		}
+		var json1 = {
+			"token": sessionStorage.token,
+			"projectId": sessionStorage.projId
+		}
+		var jsondata1 = JSON.stringify(json1);
+		console.log(json1);
+		$.ajax({
+			async: true,
+			type: 'POST',
+			url: 'http://139.199.86.115:8080/ProjectForDaChuang/projectByInfo',
+			data: jsondata1,
+			dataType: 'json',
+			contentType: 'application/json;charset=UTF-8',
+			success: function(result) {
+				if (result.code == 200) {
+					console.log(result);
+					// alert("成功");
+					// sessionStorage.token = result.data.content.token;
+					$(".projectTopic").val(result.data.content.projectTopic);
+					$(".projectPrincipalName").val(result.data.content.projectPrincipalName);
+					$(".projectTypeId").val(result.data.content.projectTypeId);
+					$(".projectContent").html(result.data.content.projectContent);
+					$(".projectAddress").val(result.data.content.projectAddress);
+					$(".projectPeopleNumbers").val(result.data.content.projectPeopleNumbers);
+					$(".projectPrincipalPhone").val(result.data.content.projectPrincipalPhone);
+					$(".proj-username").val(result.data.content.username);
+						
+					// window.location.href = "../pages/upload-projs-pics.html"
+				} else {
+					// alert("失败");
+				}
+			}
+		})
+// 		$(".btn1").click(function() {
+// 			alert("hahaha")
+// 			var json1 = {
+// 				"projectTopic": $(".projectTopic").val(),
+// 				"projectContent": $(".projectContent").val(),
+// 				"projectRegion": $(".prov").val() + $(".city").val() + $(".dist").val(),
+// 				"projectAddress": $(".projectAddress").val(),
+// 				"projectPrincipalName": $(".projectPrincipalName").val(),
+// 				"projectPrincipalPhone": $(".projectPrincipalPhone").val(),
+// 				"projectPeopleNumbers": $(".projectPeopleNumbers").val(),
+// 				"projectTypeId": $(".projectTypeId").val(),
+// 				"latitude": "1",
+// 				"longitude": "1",
+// 				"token": sessionStorage.token,
+// 				"username": sessionStorage.username
+// 			};
+// 			var jsondata1;
+// 			jsondata1 = JSON.stringify(json1);
+// 			console.log(jsondata1);
+// 			$.ajax({
+// 				async: true,
+// 				type: "POST",
+// 				url: 'http://139.199.86.115:8080/ProjectForDaChuang/projectissue',
+// 				data: jsondata1,
+// 				dataType: "json",
+// 				contentType: 'application/json;charset=UTF-8',
+// 				success: function(result) {
+// 					console.log(result);
+// 					if (result.code == 200) {
+// 						alert("成功");
+// 						sessionStorage.token = result.data.newToken;
+// 						sessionStorage.projId = result.data.projectId;
+// 						window.location.href = "../pages/upload-projs-pics.html"
+// 					} else {
+// 						alert("失败");
+// 					}
+// 				}
+// 			})
+// 		})
+		$("#input-gly").fileinput({
+			theme: "gly",
+			uploadUrl: '#', // you must set a valid URL here else you will get an error
+			// allowedFileExtensions : ['jpg', 'png','gif'],
+			overwriteInitial: false,
+			maxFileSize: 10000,
+			maxFilesNum: 9,
+			allowedFileTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object', 'other'],
+			slugCallback: function(filename) {
+				return filename.replace('(', '_').replace(']', '_');
+			}
+		});
+		$('#birthday').daterangepicker({
+			singleDatePicker: true
+		}, function(start, end, label) {
+			console.log(start.toISOString(), end.toISOString(), label);
+		});
+		$("#city").citySelect({
+			prov: "陕西",
+			city: "西安",
+			dist: "雁塔区",
+			nodata: "none"
+		});
+		$(".create-projs-div").height($(window).height());
+		$(".create-projs-inner-div").height($(window).height());
+		$(window).resize(function() {
+			$(".create-projs-div").height($(window).height());
+			$(".create-projs-inner-div").height($(window).height());
+		})
+		$(".navbar-touxiang").width($(".navbar-touxaing").height());
+	</script>
+</html>
+
