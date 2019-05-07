@@ -2,7 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+html{
+	font-size: 20px;
+}
 body {
 	background-color: rgb(154, 161, 169);
 }
@@ -323,17 +325,17 @@ a:hover {
 
 .login-form-group1 {
 	position: relative;
-	bottom: 10px;
+	bottom: 1rem;
 }
 
 .login-form-group3 {
 	position: relative;
-	top: 10px;
+	top: 1rem;
 }
 
 .login-form-group4 {
 	position: relative;
-	top: 10px;
+	top: 1rem;
 }
 
 /* .person-center-detail-div1{
@@ -406,6 +408,7 @@ p {
 }
 
 .proj-touxiang {
+	display: inline-block;
 	width: 30px;
 	height: 30px;
 }
@@ -427,13 +430,13 @@ p {
 
 .hot-person-div {
 
-	float: left;
-	height: 90%;
-	width: 77%;
+	
+	
+	
 	margin-left: 15px;
 	background-color: rgb(255, 255, 255);
-	margin-top: 70px;
-	border-radius: 8px;
+	margin-top: 1rem;
+	border-radius: 0.2rem;
 }
 
 .hot-project-div {
@@ -441,9 +444,9 @@ p {
 	height: 90%;
 	width: 20%;
 	background-color: rgb(255, 255, 255);
-	margin-top: 70px;
+	margin-top: 1rem;
 	margin-right: 15px;
-	border-radius: 8px;
+	border-radius: 0.2rem;
 }
 
 .hot-project-div-2 {
@@ -489,11 +492,11 @@ p {
 }
 
 .hot-person-inner-div {
-	padding: 0;
+	/* padding: 0; */
 	/* height: 80%; */
 	/* margin-top: 30px; */
-	margin-left: 80px;
-	margin-right: 80px;
+	/* margin-left: 80px;
+	margin-right: 80px; */
 
 }
 
@@ -643,4 +646,5 @@ align-items:center;
 }
 .index-div{
 	height: 90%;
+	background-color: rgb(255, 255, 255);
 }

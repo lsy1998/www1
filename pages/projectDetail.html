@@ -24,13 +24,25 @@
 		<script src="../js/share.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jquery.flexText.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/zoomify.js" type="text/javascript" charset="utf-8"></script>
-
+<style type="text/css">
+			
+		
+			body {
+			  height: 100vh;
+			  margin: 0;
+			  background: linear-gradient(54deg, #9164ff, #8bfff4);
+			  color: #8b9095;
+			  font-size: 14px;
+			  font-family: 'Roboto', sans-serif;
+			}
+		
+	</style>
 
 	</head>
 	<body>
 
 
-		<nav class="navbar navbar-default navbar-fixed-top gradient">
+		<nav class="navbar navbar-default navbar-fixed-top gradient" style="background:rgba(255,255,255,0.5);">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -70,21 +82,21 @@
 		</nav>
 
 
-		<div class="person-center-div">
-			<div class="person-center-inner-div">
-				<form action="">
-					<form class="form-horizontal">
+		<!-- <div class="person-center-div"> -->
+			
+				<!-- <form action="">
+					<form class="form-horizontal"> -->
 
 
-						<div class="person-detail-form-group2">
+						<!-- <div class="person-detail-form-group2">
 							<div class="container-fluid">
-								<div class="row-fluid">
-									<div class="span12">
-										<div class="tabbable" id="tabs-726008">
+								<div class="row-fluid"> -->
+									<!-- <div class="span12">
+										<div class="tabbable" id="tabs-726008"> -->
 
-											<div class="tab-content" style="">
-												<div class="tab-pane active" id="panel1" style="">
-													<div class="project container-fluid">
+											<!-- <div class="tab-content" style="">
+												<div class="tab-pane active" id="panel1" style=""> -->
+													<div class="project container-fluid" style="margin-left: 35rem; margin-right: 35rem; margin-top:12.5rem ; ">
 														<div class="proj-content">
 															<img src="#" alt="" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center">
 															<div class="proj-username"></div>
@@ -151,18 +163,17 @@
 														</div>
 													</div>
 
-												</div>
+											<!-- 	</div>
 
-											</div>
-										</div>
-									</div>
-								</div>
+											</div> -->
+										<!-- </div>
+									</div> -->
+							<!-- 	</div>
 							</div>
-						</div>
-					</form>
-				</form>
-			</div>
-		</div>
+						</div> -->
+					<!-- </form>
+				</form> -->
+			
 
 
 		<nav class="navbar navbar-default navbar-fixed-bottom">
@@ -173,7 +184,7 @@
 		</nav>
 
 	</body>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(".delete").click(function() {
 			var json = {
 				"token": sessionStorage.token,
@@ -340,116 +351,7 @@
 
 
 
-		// 		var json3 = {
-		// 			"username": sessionStorage.username,
-		// 			"token": sessionStorage.token,
-		// 			"projectId": parseInt(sessionStorage.projId)
-		// 		}
-		// 		var jsondata3;
-		// 		jsondata3 = JSON.stringify(json3);
-		// 		console.log(json3);
-		// 		$.ajax({
-		// 			async: true,
-		// 			type: 'POST',
-		// 			url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectVid',
-		// 			data: jsondata3,
-		// 			dataType: 'json',
-		// 			contentType: 'application/json;charset=UTF-8',
-		// 			success: function(result) {
-		// 				if (result.code == 200) {
-		// 					console.log(result);
-		// 					// alert("成功");
-		// 					var i = 0;
-		// 
-		// 					for (i = 0; i < result.data.videoLinks.length; i++) {
-		// 						var vidstr ='<div class="col-md-4 col-sm-4 col-xs-4"><video id="my-video" class="my-video video-js col-md-12 col-sm-12 col-xs-12" controls preload="auto"  data-setup="{}">';
-		// 						vidstr += '<source src="';
-		// 						vidstr += result.data.videoLinks[i].videoLink;
-		// 						vidstr +='" type="video/mp4"><source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"><source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">';
-		// 						vidstr +='<p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>';
-		// 						// 						picstr += i;
-		// 						// 						picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
-		// 						// 						picstr += result.data.videoLinks[i].videoLink;
-		// 						// 						picstr += '" alt="">';
-		// 						$(".proj-pic-vid").append(vidstr);
-		// 					}
-		// 					var json2 = {
-		// 						"username": sessionStorage.username,
-		// 						"token": sessionStorage.token,
-		// 						"projectId": parseInt(sessionStorage.projId)
-		// 					}
-		// 					var jsondata2;
-		// 					jsondata2 = JSON.stringify(json2);
-		// 					console.log(json2);
-		// 					$.ajax({
-		// 						async: true,
-		// 						type: 'POST',
-		// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
-		// 						data: jsondata2,
-		// 						dataType: 'json',
-		// 						contentType: 'application/json;charset=UTF-8',
-		// 						success: function(result) {
-		// 							if (result.code == 200) {
-		// 								console.log(result);
-		// 								// alert("成功");
-		// 								var i = 0;
-		// 
-		// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
-		// 									var picstr = '<div class="img-div col-md-4 col-sm-4 col-xs-4 " style=""><img class="project-pic';
-		// 									picstr += i;
-		// 									picstr += 'video-pic-class " src="';
-		// 									picstr += result.data.pictureLinks[i].pictureLink
-		// 									picstr +='" style="margin-top:5px; padding:0; object-fit: scale-down; background-color:#000000; background-color:rgba(0,0,0,0); " alt="" width="100%" height="100%"></div>';
-		// 									$(".proj-pic-vid").append(picstr);
-		// 								}
-		// 								$(".img-div").height($(".img-div").width());
-		// 								// $(".video-pic-class").height($(".img-div").width());
-		// 								$(".my-video").height($(".my-video").width());
-		// 								$(".img-div img").zoomify();
-		// 							} else {
-		// 								alert("失败");
-		// 							}
-		// 						}
-		// 					})
-		// 				} else {
-		// 					alert("失败");
-		// 					var json2 = {
-		// 						"username": sessionStorage.username,
-		// 						"token": sessionStorage.token,
-		// 						"projectId": parseInt(sessionStorage.projId)
-		// 					}
-		// 					var jsondata2;
-		// 					jsondata2 = JSON.stringify(json2);
-		// 					console.log(json2);
-		// 					$.ajax({
-		// 						async: true,
-		// 						type: 'POST',
-		// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
-		// 						data: jsondata2,
-		// 						dataType: 'json',
-		// 						contentType: 'application/json;charset=UTF-8',
-		// 						success: function(result) {
-		// 							if (result.code == 200) {
-		// 								console.log(result);
-		// 								// alert("成功");
-		// 								var i = 0;
-		// 
-		// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
-		// 									var picstr = '<img class="project-pic';
-		// 									picstr += i;
-		// 									picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
-		// 									picstr += result.data.pictureLinks[i].pictureLink
-		// 									picstr += '" alt="">';
-		// 									$(".proj-pic-vid").append(picstr);
-		// 								}
-		// 							} else {
-		// 								alert("失败");
-		// 							}
-		// 						}
-		// 					})
-		// 				}
-		// 			}
-		// 		})
+		
 		$(".project-pic").height($(".project-pic").width());
 		$(".video-pic-div").height($(".video-pic-2").height());
 		$(".vjs-tech").height($(".video-pic-2").height());
@@ -632,7 +534,7 @@
 			var myPlayer = this;
 			myPlayer.play();
 		});
-	</script>
+	</script> -->
 	<script type="text/javascript">
 		$(function() {
 			$('.content').flexText();
@@ -877,4 +779,114 @@
 			}
 		})
 	</script> -->
+	// 		var json3 = {
+	// 			"username": sessionStorage.username,
+	// 			"token": sessionStorage.token,
+	// 			"projectId": parseInt(sessionStorage.projId)
+	// 		}
+	// 		var jsondata3;
+	// 		jsondata3 = JSON.stringify(json3);
+	// 		console.log(json3);
+	// 		$.ajax({
+	// 			async: true,
+	// 			type: 'POST',
+	// 			url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectVid',
+	// 			data: jsondata3,
+	// 			dataType: 'json',
+	// 			contentType: 'application/json;charset=UTF-8',
+	// 			success: function(result) {
+	// 				if (result.code == 200) {
+	// 					console.log(result);
+	// 					// alert("成功");
+	// 					var i = 0;
+	// 
+	// 					for (i = 0; i < result.data.videoLinks.length; i++) {
+	// 						var vidstr ='<div class="col-md-4 col-sm-4 col-xs-4"><video id="my-video" class="my-video video-js col-md-12 col-sm-12 col-xs-12" controls preload="auto"  data-setup="{}">';
+	// 						vidstr += '<source src="';
+	// 						vidstr += result.data.videoLinks[i].videoLink;
+	// 						vidstr +='" type="video/mp4"><source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"><source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">';
+	// 						vidstr +='<p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p></video></div>';
+	// 						// 						picstr += i;
+	// 						// 						picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
+	// 						// 						picstr += result.data.videoLinks[i].videoLink;
+	// 						// 						picstr += '" alt="">';
+	// 						$(".proj-pic-vid").append(vidstr);
+	// 					}
+	// 					var json2 = {
+	// 						"username": sessionStorage.username,
+	// 						"token": sessionStorage.token,
+	// 						"projectId": parseInt(sessionStorage.projId)
+	// 					}
+	// 					var jsondata2;
+	// 					jsondata2 = JSON.stringify(json2);
+	// 					console.log(json2);
+	// 					$.ajax({
+	// 						async: true,
+	// 						type: 'POST',
+	// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
+	// 						data: jsondata2,
+	// 						dataType: 'json',
+	// 						contentType: 'application/json;charset=UTF-8',
+	// 						success: function(result) {
+	// 							if (result.code == 200) {
+	// 								console.log(result);
+	// 								// alert("成功");
+	// 								var i = 0;
+	// 
+	// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
+	// 									var picstr = '<div class="img-div col-md-4 col-sm-4 col-xs-4 " style=""><img class="project-pic';
+	// 									picstr += i;
+	// 									picstr += 'video-pic-class " src="';
+	// 									picstr += result.data.pictureLinks[i].pictureLink
+	// 									picstr +='" style="margin-top:5px; padding:0; object-fit: scale-down; background-color:#000000; background-color:rgba(0,0,0,0); " alt="" width="100%" height="100%"></div>';
+	// 									$(".proj-pic-vid").append(picstr);
+	// 								}
+	// 								$(".img-div").height($(".img-div").width());
+	// 								// $(".video-pic-class").height($(".img-div").width());
+	// 								$(".my-video").height($(".my-video").width());
+	// 								$(".img-div img").zoomify();
+	// 							} else {
+	// 								alert("失败");
+	// 							}
+	// 						}
+	// 					})
+	// 				} else {
+	// 					alert("失败");
+	// 					var json2 = {
+	// 						"username": sessionStorage.username,
+	// 						"token": sessionStorage.token,
+	// 						"projectId": parseInt(sessionStorage.projId)
+	// 					}
+	// 					var jsondata2;
+	// 					jsondata2 = JSON.stringify(json2);
+	// 					console.log(json2);
+	// 					$.ajax({
+	// 						async: true,
+	// 						type: 'POST',
+	// 						url: 'http://139.199.86.115:8080/ProjectForDaChuang/downProjectPic',
+	// 						data: jsondata2,
+	// 						dataType: 'json',
+	// 						contentType: 'application/json;charset=UTF-8',
+	// 						success: function(result) {
+	// 							if (result.code == 200) {
+	// 								console.log(result);
+	// 								// alert("成功");
+	// 								var i = 0;
+	// 
+	// 								for (i = 0; i < result.data.pictureLinks.length; i++) {
+	// 									var picstr = '<img class="project-pic';
+	// 									picstr += i;
+	// 									picstr += 'video-pic-2 col-md-4 col-sm-4 col-xs-4" src="';
+	// 									picstr += result.data.pictureLinks[i].pictureLink
+	// 									picstr += '" alt="">';
+	// 									$(".proj-pic-vid").append(picstr);
+	// 								}
+	// 							} else {
+	// 								alert("失败");
+	// 							}
+	// 						}
+	// 					})
+	// 				}
+	// 			}
+	// 		})
 </html>

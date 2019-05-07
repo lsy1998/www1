@@ -280,21 +280,17 @@
 		})
 		$(".token").val(sessionStorage.token);
 		$(".username").val(sessionStorage.username);
-
-		// 		$(".project").dblclick(function(){
-		// 			sessionStorage.projId=$(".projId1").val();
-		// 			alert(sessionStorage.projId);
-		// 			window.location.href="../pages/projectDetail.html";
-		// 		})
-
+		
+		
+		
+		
+		
 		var json1 = {
-			// "username": sessionStorage.username,
 			"token": sessionStorage.token
 		}
 		var jsondata1;
 		jsondata1 = JSON.stringify(json1);
 		console.log(json1);
-
 		$.ajax({
 			async: true,
 			type: 'post',
@@ -305,24 +301,20 @@
 			success: function(result) {
 				console.log(result);
 				if (result.code == 200) {
-					if (result.data.content.length == 0) {
+					if (result.data.content.list.length == 0) {
 
 						$(".project-container").append('<div class="project"><br><h1>还没有项目！</h1><br><h1>快去发布一个项目吧！</h1><br></div>');
 					}
-					// sessionStorage.token = result.data.content[0].token;
-					// alert(result.data.content.userNick);
 					var i = 0;
-					console.log(result.data.content.length);
-					sessionStorage.projlength = result.data.content.length - 1;
+					console.log(result.data.content.list.length);
+					sessionStorage.projlength = result.data.content.list.length - 1;
 					console.log(sessionStorage.projlength);
-					for (i = result.data.content.length - 1; i >= 0; i--) {
+					for (i = 2; i >= 0; i--) {
 						var str = '<div data-index="';
 						str += i;
-						str +=
-							'" class="project container-fluid"><div class="proj-content"><img src="#" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"><div class="proj-username proj-username';
+						str +='" class="project container-fluid"><div class="proj-content"><img src="#" class="touxiang proj-touxiang navbar-left img-circle img-responsive text-center"><div class="proj-username proj-username';
 						str += i;
-						str +=
-							'"></div><br><p class="proj-detail proj-detail';
+						str +='"></div><br><p class="proj-detail proj-detail';
 						str += i;
 						str += '"></p></div><div class="project-buttom-bar col-md-12"><p class="proj-time';
 						str += i;
@@ -339,7 +331,7 @@
 						projdetailstr += i;
 						var projusernamestr = '.proj-username';
 						projusernamestr += i;
-						sessionStorage.nick=projusernamestr;
+						
 						var projtimestr = '.proj-time';
 						projtimestr += i;
 						var peopleNumberstr = '.peopleNumber';
@@ -371,67 +363,41 @@
 								console.log(result);
 								if (result.code == 200) {
 									sessionStorage.token = result.data.content.token;
-									$(sessionStorage.nick).text(result.data.content.userNick);
+									$(projusernamestr).text(result.data.content.userNick);
+									$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
+									$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
+									$(".username-label").text(result.data.content.userNick);
+									$(".sex-label").text(result.data.content.userSex);
+									$(".job-label").text(result.data.content.userIdentify);
+									$(".address-label").text(result.data.content.userAddress);
+									$(".phone-label").text(result.data.content.userPhone);
 								} else {
 									alert("no");
 								}
 							}
 						})
-						// $(".projId1").val(result.data.content[i].projectId);
-						$(projdetailstr).html(result.data.content[i].projectContent);
-						$(projtimestr).html(result.data.content[i].projectIssueTime);
-						$(peopleNumberstr).html(result.data.content[i].projectPeopleNumbers + '人');
-						$(topicstr).html(result.data.content[i].projectTopic);
-						$(addressstr).html(result.data.content[i].projectRegion);
-						$(projectIdstr).html(result.data.content[i].projectId);
-						// $(projtimestr).html(result.data.content[i].projectIssueTime);
+						
+						
+						$(projdetailstr).html(result.data.content.list[i].projectContent);
+						$(projtimestr).html(result.data.content.list[i].projectIssueTime);
+						$(peopleNumberstr).html(result.data.content.list[i].projectPeopleNumbers + '人');
+						$(topicstr).html(result.data.content.list[i].projectTopic);
+						$(addressstr).html(result.data.content.list[i].projectRegion);
+						$(projectIdstr).html(result.data.content.list[i].projectId);
+						
 					}
-					var json1 = {
-						"token": sessionStorage.token,
-						"userId": parseInt(sessionStorage.userid)
-					};
-					var jsondata1;
-					jsondata1 = JSON.stringify(json1);
-					console.log(jsondata1);
-					$.ajax({
-						async: false,
-						type: "POST",
-						url: 'http://139.199.86.115:8080/ProjectForDaChuang/getUserInfoById',
-						data: jsondata1,
-						dataType: "json",
-						contentType: 'application/json;charset=UTF-8',
-						success: function(result) {
-							console.log(result);
-							if (result.code == 200) {
-								sessionStorage.token = result.data.content.token;
-								// alert(result.data.content.userNick);
-								$(".username-label").text(result.data.content.userNick);
-								$(".sex-label").text(result.data.content.userSex);
-								$(".job-label").text(result.data.content.userIdentify);
-								$(".address-label").text(result.data.content.userAddress);
-								$(".phone-label").text(result.data.content.userPhone);
-								$(".person-center-touxiang").attr("src", result.data.content.userHeadPictureLink);
-								$(".touxiang").attr("src", result.data.content.userHeadPictureLink);
-							} else {
-								alert("no");
-							}
-						}
-					})
-
 					
-
 					var aLi = document.getElementsByClassName('project');
 					var y = 0;
 					for (y = 0; y < aLi.length; y++) {
 						aLi[y].index = y;
 						aLi[y].onclick = function() {
-							// 							var a=parseInt(sessionStorage.length);
-							// 							alert(a);
+							
 							sessionStorage.projId = $(".projectId:eq(" + (parseInt(sessionStorage.projlength) - parseInt($(this).attr(
 								"data-index"))) + ")").text();
 							alert(sessionStorage.projId);
 							window.location.href = "../pages/projectDetail.html";
-							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+							
 						}
 					}
 					// fa fa - pencil
@@ -443,8 +409,7 @@
 							alert(this.index);
 							sessionStorage.projId = $(".projectId:eq(" + this.index + ")").text();
 							alert(sessionStorage.projId);
-							// 							window.location.href = "../pages/change-personal-information.html";
-							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+							
 						}
 					}
 					var video = document.getElementsByClassName('video');
@@ -455,8 +420,7 @@
 							alert(this.index);
 							sessionStorage.projId = $(".projectId:eq(" + this.index + ")").text();
 							alert(sessionStorage.projId);
-							// window.location.href = "../pages/change-personal-information.html";
-							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+						
 						}
 					}
 					var pic = document.getElementsByClassName('pic');
@@ -467,8 +431,7 @@
 							alert(this.index);
 							sessionStorage.projId = $(".projectId:eq(" + this.index + ")").text();
 							alert(sessionStorage.projId);
-							// 							window.location.href = "../pages/change-personal-information.html";
-							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+							
 						}
 					}
 					var del = document.getElementsByClassName('delete');
@@ -503,17 +466,16 @@
 									}
 								}
 							})
-							// 							window.location.href = "../pages/change-personal-information.html";
-							// alert($(".projectId:eq(" + (19 - parseInt($(this).attr("data-index"))) + ")").text());
+							
 						}
 					}
-					// alert(result.data.content[0].projectId);
+				
 				} else {
 					alert("no");
 				}
 			}
 		})
-		// $("#btn1").click(function() {
+		
 
 
 
@@ -567,45 +529,14 @@
 			$(".vjs-poster").height($(".video-pic-2").height());
 			$(".my-video").height($(".video-pic-2").height());
 		});
-		// 		var update;
-		// 		$(".touxiang").click(function() {
-		// 			if (!update) {
-		// 				update = new UpdateCropper(
-		// 					(base64url) => {
-		// 						$(".touxiang").attr('src', base64url);
-		// 						// console.log(base64url);
-		// 					}
-		// 				);
-		// 				
-		// 			}
-		// 			update.init();
-		// 		});
-		// 		$(".person-center-div").height($(window).height() + $(".tab-pane").height());
-		// 		$(".person-center-inner-div").height($(window).height() + $(".tab-pane").height());
-		// $(".navbar-touxiang").width($(".navbar-touxaing").height());
-		// 		$(".video-pic").width($(".tab-pane").width() / 4);
-		// 		$(".video-pic").height($(".video-pic").width());
-		// 		$(".video-pic-div").width($(".tab-pane").width() / 4);
-		// 		$(".video-pic-div").height($(".video-pic-div").width());
+		
 		$('.icon-external-link').shareConfig({
 			Shade: true, //是否显示遮罩层
 			Event: 'click', //触发事件
 			Content: 'Share', //内容DIV ID
 			Title: '分享至' //显示标题
 		});
-		// 		var myDate = new Date();
-		// 		//获取当前年
-		// 		var year = myDate.getFullYear();
-		// 		//获取当前月
-		// 		var month = myDate.getMonth() + 1;
-		// 		//获取当前日
-		// 		var date = myDate.getDate();
-		// 		var h = myDate.getHours(); //获取当前小时数(0-23)
-		// 		var m = myDate.getMinutes(); //获取当前分钟数(0-59)
-		// 		if (m < 10) m = '0' + m;
-		// 		var s = myDate.getSeconds();
-		// 		if (s < 10) s = '0' + s;
-		// 		var now = year + '-' + month + "-" + date + " " + h + ':' + m + ":" + s;
+		
 
 		videojs.addLanguage('zh-CN', {
 			"Play": "播放",
@@ -702,7 +633,41 @@
 			myPlayer.play();
 		});
 	</script>
-	<!-- <script type="text/javascript">
+</html>
+<!-- // 		var update;
+		// 		$(".touxiang").click(function() {
+		// 			if (!update) {
+		// 				update = new UpdateCropper(
+		// 					(base64url) => {
+		// 						$(".touxiang").attr('src', base64url);
+		// 						// console.log(base64url);
+		// 					}
+		// 				);
+		// 				
+		// 			}
+		// 			update.init();
+		// 		});
+		// 		$(".person-center-div").height($(window).height() + $(".tab-pane").height());
+		// 		$(".person-center-inner-div").height($(window).height() + $(".tab-pane").height());
+		// $(".navbar-touxiang").width($(".navbar-touxaing").height());
+		// 		$(".video-pic").width($(".tab-pane").width() / 4);
+		// 		$(".video-pic").height($(".video-pic").width());
+		// 		$(".video-pic-div").width($(".tab-pane").width() / 4);
+		// 		$(".video-pic-div").height($(".video-pic-div").width()); -->
+<!-- // 		var myDate = new Date();
+		// 		//获取当前年
+		// 		var year = myDate.getFullYear();
+		// 		//获取当前月
+		// 		var month = myDate.getMonth() + 1;
+		// 		//获取当前日
+		// 		var date = myDate.getDate();
+		// 		var h = myDate.getHours(); //获取当前小时数(0-23)
+		// 		var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+		// 		if (m < 10) m = '0' + m;
+		// 		var s = myDate.getSeconds();
+		// 		if (s < 10) s = '0' + s;
+		// 		var now = year + '-' + month + "-" + date + " " + h + ':' + m + ":" + s; -->
+<!-- <script type="text/javascript">
 		$(function() {
 			$('.content').flexText();
 		});
@@ -867,4 +832,3 @@
 			}
 		})
 	</script> -->
-</html>

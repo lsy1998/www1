@@ -9,10 +9,12 @@
 		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 		<script src="http://cdn.bootcss.com/three.js/r68/three.min.js"></script>
+		<script src="js/jquery.waypoints.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.countup.js" type="text/javascript" charset="utf-8"></script>
 	</head>
-	<body>
+	<body style="background-color: rgb(255, 255, 255);">
 
-		<nav class="navbar navbar-default navbar-fixed-top gradient">
+		<nav class="navbar navbar-default  gradient" style="margin: 0;">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -22,7 +24,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="">志愿服务</a>
+					<a class="navbar-brand" href="login.html">志愿服务</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<form class="navbar-form navbar-left">
@@ -50,45 +52,86 @@
 			</div>
 		</nav>
 
-		<div class="index-div">
-			<div id="canvas" class="hot-person-div gradient">
+
+
+
+
+		<div class="container-fluid">
+			<div class="row">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="img/lun1.png" alt="..." style="width:1700px;height: 390px">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/lun2.png" alt="..." style="width:1700px;height: 390px">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img src="img/lun3.png" alt="..." style="width:1700px;height: 390px">
+							<div class="carousel-caption">
+							</div>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+<span class="counter">1234567</span>
+
+		<div class="">
+			<div class="container-fluid" style="">
 				<h4 class="gongYiDaRen">公益达人</h4>
-				<div class="hot-person-inner-div container-fluid">
-					<div>
+				<div class="" style="margin: 0 auto;">
+					<!-- <div>
 						<i class="col-md-2 col-sm-2 col-xs-2">1莱布尼兹</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">2欧拉</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">3柯西</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">4伯努利</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">5拉格朗日</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">6阿基米德</i>
-					</div>
-					<div class="one-six">
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b1.jpg" alt=""></div>
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b2.jpg" alt=""></div>
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b3.jpg" alt=""></div>
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b4.jpg" alt=""></div>
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b5.jpg" alt=""></div>
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
-					</div>
+					</div> -->
 
-					<div class="seven-twelve">
-						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b1.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b2.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b3.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b4.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b5.jpg" alt=""></div>
+					<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
+
+					<!-- <div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b6.jpg" alt=""></div>
 						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b5.jpg" alt=""></div>
 						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b4.jpg" alt=""></div>
 						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b3.jpg" alt=""></div>
 						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b2.jpg" alt=""></div>
 						<div class="hot-person-img-div col-md-2 col-sm-2 col-xs-2"><img class="hot-person-img" src="img/b1.jpg" alt=""></div>
-					</div>
-					<div>
+				 -->
+					<!-- <div>
 						<i class="col-md-2 col-sm-2 col-xs-2">7牛顿</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">8亚里士多德</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">9洛必达</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">10泰勒</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">11哈密顿</i>
 						<i class="col-md-2 col-sm-2 col-xs-2">12欧几里得</i>
-					</div>
+					</div> -->
 				</div>
-				<div class="hot-project-div-2 container-fluid hidden-lg hidden-md" style="width: 100%;">
+				<!-- <div class="hot-project-div-2 container-fluid hidden-lg hidden-md" style="width: 100%;">
 					<h4 class="remeng">热门项目</h4>
 					<div class="container-fluid">
 						<div class="row">
@@ -98,21 +141,17 @@
 							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">4这是一个项目</a>
 							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">5这是一个项目</a>
 							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">6这是一个项目</a><br>
-						</div>
-						<div class="row">
+
 							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">7这是一个项目</a>
 							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">8这是一个项目</a>
-							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">9这是一个项目</a>
-							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">10这是一个项目</a>
-							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">11这是一个项目</a>
-							<a class="hot-project-a-2 col-md-2 col-sm-2 col-xs-2" href="">12这是一个项目</a>
+
 						</div>
 
 					</div>
-				</div>
+				</div> -->
 			</div>
 
-			<div id="canvas" class="gradient hot-project-div">
+			<!-- <div  class="gradient hot-project-div">
 				<div class="hot-project-inner-div container-fluid ">
 					<h4>热门项目</h4>
 					<div>
@@ -124,18 +163,50 @@
 						<i>6</i><a class="hot-project-a" href="">这是一个项目</a><br>
 						<i>7</i><a class="hot-project-a" href="">这是一个项目</a><br>
 						<i>8</i><a class="hot-project-a" href="">这是一个项目</a><br>
-						<i>9</i><a class="hot-project-a" href="">这是一个项目</a><br>
-						<i>10</i><a class="hot-project-a" href="">这是一个项目</a><br>
-						<i>11</i><a class="hot-project-a" href="">这是一个项目</a><br>
-						<i>12</i><a class="hot-project-a" href="">这是一个项目</a><br>
+
 					</div>
 				</div>
+			</div> -->
+
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="img/box3.jpg" alt="...">
+						<div class="caption">
+							<h3>”奉献”——原指恭敬地交付、呈献，即不求回报地付出。奉献精神是高尚的，是志愿服务精神的精髓。志愿者在不计报酬、不求名利、不要特权的情况下参与推动人类发展、促进社会的活动，这些都体现着高尚的奉献精神。</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">加入</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="img/box1.jpg" alt="...">
+						<div class="caption">
+							<h3>“友爱”——志愿服务精神提倡志愿者欣赏他人、与人为善、有爱无碍、平等尊重，这便是友爱精神。志愿者之爱跨越了国界、职业和贫富差距，是没有文化差异，没有民族之分，没有收入高低的平等之爱，它让社会充满阳光般的温暖。
+							</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">加入</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="img/box2.jpg" alt="...">
+						<div class="caption">
+							<h3>“互助”——志愿服务包含着深刻的互助精神，它提倡“互相帮助、助人自助”。志愿者凭借自己的双手、头脑、知识、爱心开展各种志愿服务活动，帮助那些处于困难和危机中的人们。志愿服务者以“互助”精神唤醒许多人内心的仁爱和慈善。
+							</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">加入</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
-
-
-
-		<nav id="canvas" class="gradient navbar navbar-default navbar-fixed-bottom">
+		<nav class="gradient navbar navbar-default navbar-fixed-bottom">
 			<div class="container">
 				<address>Copyright&nbsp;©&nbsp;2019&nbsp;ZhiYuanFuWu&nbsp;Inc.&nbsp;All&nbsp;rights&nbsp;reserved</address>
 				<address>桂林电子科技大学·志愿服务团队</address>
@@ -144,22 +215,22 @@
 	</body>
 	<script type="text/javascript">
 		
+		$('.counter').countUp();
+	
+		$(".search-btn").click(function() {
+			sessionStorage.searchContent = $(".searchContent").val();
+			window.location.href = "pages/search-result.html";
 
-		window.location.href = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? "./mobilePages/index1.html" :  "./indexx.html";
-		$(".search-btn").click(function(){
-			sessionStorage.searchContent=$(".searchContent").val();
-			window.location.href="pages/search-result.html";
-			
 		})
 		$("body").height($(window).height());
 		// $(".touxiang").height($(".navbar-touxaing").width());
-		$("#create-projs").click(function(){
-			if(sessionStorage.login!="true"){
+		$("#create-projs").click(function() {
+			if (sessionStorage.login != "true") {
 				return false;
 			}
-			
+
 		})
-		if(sessionStorage.login=="true"){
+		if (sessionStorage.login == "true") {
 			var json = {
 				"username": sessionStorage.username,
 				"token": sessionStorage.token
@@ -191,40 +262,40 @@
 					}
 				}
 			})
-			
+
 		}
 		// alert(sessionStorage.touxiangurl);
-// 		if (sessionStorage.touxiangurl != null) {
-// 			var json = {
-// 				"username": sessionStorage.username,
-// 				"token": sessionStorage.token
-// 			}
-// 			var jsondata;
-// 			jsondata = JSON.stringify(json);
-// 			console.log(json);
-// 			var xmlhttp;
-// 			xmlhttp = new XMLHttpRequest();
-// 			xmlhttp.open("POST", "http://139.199.86.115:8080/ProjectForDaChuang/downLoadHeadPicture", true);
-// 			xmlhttp.setRequestHeader("Content-Type", "application/json");
-// 			xmlhttp.responseType = "blob";
-// 			xmlhttp.onload = function() {
-// 				console.log(this.response);
-// 				if (this.status == 200) {
-// 					var blob = this.response;
-// 					var img = document.createElement("img");
-// 					img.onload = function(e) {
-// 						window.URL.revokeObjectURL(img.src);
-// 					};
-// 					// img.src = window.URL.createObjectURL(blob);
-// 					// document.body.appendChild(img);
-// 					sessionStorage.touxiangurl = window.URL.createObjectURL(blob);
-// 					// alert(localStorage.touxiangurl);
-// 					$(".person-center-touxiang").attr("src", window.URL.createObjectURL(blob));
-// 					$(".touxiang").attr("src", window.URL.createObjectURL(blob));
-// 				}
-// 			}
-// 			xmlhttp.send(jsondata);
-// 		}
+		// 		if (sessionStorage.touxiangurl != null) {
+		// 			var json = {
+		// 				"username": sessionStorage.username,
+		// 				"token": sessionStorage.token
+		// 			}
+		// 			var jsondata;
+		// 			jsondata = JSON.stringify(json);
+		// 			console.log(json);
+		// 			var xmlhttp;
+		// 			xmlhttp = new XMLHttpRequest();
+		// 			xmlhttp.open("POST", "http://139.199.86.115:8080/ProjectForDaChuang/downLoadHeadPicture", true);
+		// 			xmlhttp.setRequestHeader("Content-Type", "application/json");
+		// 			xmlhttp.responseType = "blob";
+		// 			xmlhttp.onload = function() {
+		// 				console.log(this.response);
+		// 				if (this.status == 200) {
+		// 					var blob = this.response;
+		// 					var img = document.createElement("img");
+		// 					img.onload = function(e) {
+		// 						window.URL.revokeObjectURL(img.src);
+		// 					};
+		// 					// img.src = window.URL.createObjectURL(blob);
+		// 					// document.body.appendChild(img);
+		// 					sessionStorage.touxiangurl = window.URL.createObjectURL(blob);
+		// 					// alert(localStorage.touxiangurl);
+		// 					$(".person-center-touxiang").attr("src", window.URL.createObjectURL(blob));
+		// 					$(".touxiang").attr("src", window.URL.createObjectURL(blob));
+		// 				}
+		// 			}
+		// 			xmlhttp.send(jsondata);
+		// 		}
 		var x;
 		var y;
 		$(window).resize(function() { //当浏览器大小变化时
@@ -274,6 +345,5 @@
 			$(".hot-project-div ").css("background-size", "cover");
 			i++;
 		});
-		
 	</script>
 </html>
